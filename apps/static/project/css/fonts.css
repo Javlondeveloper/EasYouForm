@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat_Alternates/MontserratAlternates-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat_Alternates/MontserratAlternates-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'El-Messiri';
+  src: url(../fonts/El_Messiri/ElMessiri-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Czizh';
+  src: url('../fonts/Czizh/Czizh Body.ttf');
+  font-weight: 400;
+}

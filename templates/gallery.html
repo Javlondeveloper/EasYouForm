@@ -1,0 +1,244 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>easYouform</title>
+    <link rel="stylesheet" href="{% static '/project/plugin/aos/aos.css' %}"/>
+    <link rel="stylesheet" href="{% static '/project/css/main.css' %}"/>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+    />
+    <link
+            rel="stylesheet"
+            href="{% static '/project/plugin/swiper/swiper-bundle.min.css' %}"
+    />
+    <script src="{% static '/project/plugin/tailwind/tailwind.js' %}"></script>
+    <script src="{% static '/project/plugin/tailwind/tailwind.config.js' %}"></script>
+</head>
+<body>
+<div class="relative overflow-x-hidden bg-white wrapper">
+    <nav
+            id="navbar"
+            class="absolute md:top-[10px] top-0 left-0 z-50 w-full mx-auto transition duration-700"
+    >
+        <div
+                id="navbar-container"
+                class="transition duration-700 navbar-rounded container nav--bg duration-400 py-2.5 px-5 flex items-center justify-between"
+        >
+            <a href="/" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
+                <img
+                        src="{% static '/project/image/logo.png' %}"
+                        alt="easYouform"
+                        class="object-contain w-full h-full"
+                />
+            </a>
+            <ul
+                    class="text-dark bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center gap-5 w-full h-screen fixed top-[100%] -right-[0%] duration-500 bg-light gap-5 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
+            >
+                <li class="duration-500 hover:text-violet">
+                    <a href="/">Главная</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="/about">О нас</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="./product.html">Наша продукция</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="./gallery.html">Галерея</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="./contact.html">Контакты</a>
+                </li>
+            </ul>
+            <div class="flex gap-x-2">
+                <a
+                        href="tel:+998 90 990 90 90"
+                        class="flex items-center text-sm gap-2.5 text-white bg-violet md:bg-transparent md:text-violet rounded-xl md:text-violet px-2 py-1.5 lg:text-lg"
+                >
+                    <i class="ri-phone-line text-xl mt-0.5 block md:hidden"></i>
+                    <span class="hidden font-normal md:block montserrat"
+                    >+998 90 990 90 90</span
+                    >
+                </a>
+                <button
+                        class="px-2 py-1.5 text-lg text-white duration-500 bg-violet rounded-xl nav-btn md:hidden"
+                >
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="py-[110px]">
+        <div class="container">
+            <div class="flex flex-col items-center gap-y-4">
+                <h3
+                        class="text-2xl font-normal text-center md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
+                        data-aos="fade-up"
+                >
+                    Фотогалерея
+                </h3>
+                <p
+                        class="w-full md:w-[70%] text-center text-base md:text-lg text-dark font-montserrat font-light pb-[30px]"
+                        data-aos="fade-up"
+                        data-aos-delay="50"
+                >
+                    easYouform – создаем моду для жизни. Присоединяйтесь к нам и дайте своему гардеробу новое
+                    вдохновение!
+                </p>
+            </div>
+        </div>
+        <div class="mt-[20px] md:mt-[30px] swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide aspect-[16/7] rounded-[20px] overflow-hidden">
+                    <img src="{% static '/project/image/unsplash_mwa_nzFpnJw.png' %}" alt=""
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="swiper-slide aspect-[16/7] rounded-[20px] overflow-hidden">
+                    <img src="{% static '/project/image/unsplash_mwa_nzFpnJw.png' %}" alt=""
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="swiper-slide aspect-[16/7] rounded-[20px] overflow-hidden">
+                    <img src="{% static '/project/image/unsplash_mwa_nzFpnJw.png' %}" alt=""
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="swiper-slide aspect-[16/7] rounded-[20px] overflow-hidden">
+                    <img src="{% static '/project/image/unsplash_mwa_nzFpnJw.png' %}" alt=""
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="swiper-slide aspect-[16/7] rounded-[20px] overflow-hidden">
+                    <img src="{% static '/project/image/unsplash_mwa_nzFpnJw.png' %}" alt=""
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="swiper-slide aspect-[16/7] rounded-[20px] overflow-hidden">
+                    <img src="{% static '/project/image/unsplash_mwa_nzFpnJw.png' %}" alt=""
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-x-5 mt-5 md:mt-[30px]">
+                <div class="swiper-button-prev static after:hidden flex items-center justify-center m-0 text-violet h-fit">
+                    <i class="ri-arrow-left-line text-[22px]"></i>
+                </div>
+                <div class="swiper-pagination static m-0 h-fit" style="width: fit-content !important;"></div>
+                <div class="swiper-button-next static after:hidden flex items-center justify-center m-0 text-violet h-fit">
+                    <i class="ri-arrow-right-line text-[22px]"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-light">
+        <div
+                class="container grid grid-cols-1 gap-5 xs:grid-cols-2 lg:grid-cols-3 text-dark font-montserrat-alternates xs:gap-10"
+        >
+            <div class="max-xs:text-center">
+                <p
+                        class="text-[13px] pb-[10px] font-montserrat font-medium"
+                        style="line-height: 24px !important"
+                >
+                    <span class="">Наш адрес:</span>
+                    Юнусабадский район Проезд Олой бозори, Tashkent, Uzbekistan
+                </p>
+                <div class="flex gap-6 w-fit max-xs:mx-auto">
+                    <a
+                            href="https://www.instagram.com/abduganiev_technology/"
+                            class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
+                    >
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a
+                            href="https://www.telegram.com"
+                            class="flex items-center justify-center w-10 h-10 text-dark"
+                    >
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 40 40"
+                                fill="none"
+                        >
+                            <path
+                                    d="M28 12.6022L24.9946 28.2923C24.9946 28.2923 24.5741 29.3801 23.4189 28.8584L16.4846 23.3526L16.4524 23.3364C17.3891 22.4654 24.6524 15.7027 24.9698 15.3961C25.4613 14.9214 25.1562 14.6387 24.5856 14.9974L13.8568 22.053L9.71764 20.6108C9.71764 20.6108 9.06626 20.3708 9.00359 19.8491C8.9401 19.3265 9.73908 19.0439 9.73908 19.0439L26.6131 12.1889C26.6131 12.1889 28 11.5579 28 12.6022Z"
+                                    fill="#363435"
+                            />
+                        </svg>
+                    </a>
+                    <a
+                            href="hhtps://www.whatsapp.com"
+                            class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
+                    >
+                        <i class="ri-whatsapp-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <a
+                        href="tel:+998 90 977 18 82"
+                        class="block text-sm lg:text-lg pb-[20px] font-montserrat font-medium"
+                        style="line-height: 34px !important"
+                >+998 90 990 90 90</a
+                >
+                <a
+                        href="mailto:info@aesyouform.uz"
+                        class="block font-normal font-montserrat"
+                        style="line-height: 24px !important"
+                >info@aesyouform.uz</a
+                >
+            </div>
+            <div
+                    class="flex flex-col items-center justify-end md:items-end xs:max-lg:col-span-2"
+            >
+                <div
+                        class="flex items-center gap-[9px] pb-4 w-fit mx-auto md:mx-0 font-montserrat font-normal"
+                >
+                    <p class="text-dark opacity-70 text-[13px]">Сайт создан</p>
+                    <a href="https://abduganiev.uz" target="_blank" class="w-10 h-10">
+                        <img
+                                class="object-contain w-full h-full"
+                                src="{% static '/project/image/abduganiev.jpeg' %}"
+                                alt="abduganiev technology"
+                        />
+                    </a>
+                </div>
+                <p
+                        class="text-[#767676] text-[13px]"
+                        style="line-height: 24px !important"
+                >
+                    ©2023 easYOUform. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="{% static '/project/plugin/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static '/project/plugin/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static '/project/js/script.js' %}"></script>
+<script src="{% static '/project/plugin/aos/aos.js' %}"></script>
+<script>
+    AOS.init();
+
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1.3,
+        spaceBetween: 40,
+        centeredSlides: true,
+        loop: true,
+        breakpoints: {
+            1280: {
+                spaceBetween: 100,
+            }
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+</body>
+</html>

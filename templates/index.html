@@ -1,0 +1,731 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>easYouform</title>
+    <link rel="stylesheet" href="{% static '/project/plugin/aos/aos.css' %}"/>
+    <link rel="stylesheet" href="{% static '/project/css/main.css' %}"/>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="{% static '/project/plugin/swiper/swiper-bundle.min.css' %}"
+    />
+    <script src="{% static '/project/plugin/tailwind/tailwind.js' %}"></script>
+    <script src="{% static '/project/plugin/tailwind/tailwind.config.js' %}"></script>
+</head>
+<body>
+<div class="relative overflow-x-hidden bg-white wrapper">
+    <nav
+            id="navbar"
+            class="absolute md:top-[10px] top-0 left-0 z-50 w-full mx-auto transition duration-700"
+    >
+        <div
+                id="navbar-container"
+                class="transition duration-700 rounded-[60px] container nav--bg duration-400 py-2.5 px-5 flex items-center justify-between"
+        >
+            <a href="/" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
+                <img
+                        src="{% static '/project/image/logo.png' %}"
+                        alt="easYouform"
+                        class="object-contain w-full h-full"
+                />
+            </a>
+            <ul
+                    class="text-dark md:bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center gap-5 w-full h-screen fixed left-[100%] top-[70px] opacity-0 md:opacity-100 -right-[0%] duration-500 bg-light gap-5 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
+            >
+                <li class="duration-500 hover:text-violet">
+                    <a href="/">Главная</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="/about">О нас</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="./product.html">Наша продукция</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="./gallery.html">Галерея</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="./contact.html">Контакты</a>
+                </li>
+            </ul>
+            <div class="flex gap-x-2">
+                <a
+                        href="tel:+998 90 990 90 90"
+                        class="flex items-center text-sm gap-2.5 text-white bg-violet md:bg-transparent md:text-violet rounded-xl md:text-violet px-2 py-1.5 lg:text-lg"
+                >
+                    <i class="ri-phone-line text-xl mt-0.5 block md:hidden"></i>
+                    <span class="hidden font-normal md:block montserrat"
+                    >+998 90 990 90 90</span
+                    >
+                </a>
+                <button
+                        class="px-2 py-1.5 text-lg text-white duration-500 bg-violet rounded-xl nav-btn md:hidden"
+                >
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <header class="relative w-full h-screen text-white">
+        <video
+                class="object-cover w-full h-full"
+                preload="auto"
+                autoplay
+                muted
+                playsinline
+        >
+            <source
+                    src="{% static '/project/Image/Holo Sphere 360 (1).mp4' %}"
+                    type="video/mp4"
+            />
+        </video>
+        <div class="absolute top-0 left-0 z-10 w-full h-screen">
+            <div
+                    class="container flex flex-col items-center justify-center h-full pb-[7%] gap-10 md:gap-0"
+            >
+                <h2
+                        class="text-5xl font-normal text-center font-elmessiri sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                        data-aos="fade-up"
+                >
+                    Идеальный стиль
+                </h2>
+                <h3
+                        class="-mt-5 text-2xl font-normal sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-czizh"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                >
+                    только для вас
+                </h3>
+                <a
+                        href="#about"
+                        class="flex flex-col items-center gap-3.5 absolute bottom-[10%] animate-bounce"
+                >
+              <span
+                      class="hidden text-sm font-normal font-montserrat md:text-xl md:block"
+              >
+                Прокрутить
+              </span>
+                    <img src="{% static '/project/image/arrow-down.svg' %}" alt=""/>
+                </a>
+            </div>
+        </div>
+
+        <!--  font-montserrat font-light text-dark text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl   -->
+    </header>
+    <section
+            id="mySlider"
+            class="splide md:py-14 sm:py-10 py-7"
+            aria-label="Splide Basic HTML Example"
+    >
+        <div class="splide__track">
+            <ul
+                    class="text-sm font-light splide__list font-montserrat text-dark sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl whitespace-nowrap"
+            >
+                <li class="flex items-center gap-10 splide__slide">
+                    <p>Высокое качество</p>
+                    <svg
+                            class="shrink-0 w-[37px] h-10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="43"
+                            viewBox="0 0 40 43"
+                            fill="none"
+                    >
+                        <path
+                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
+                                stroke="#363435"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        />
+                    </svg>
+                </li>
+                <li class="flex items-center gap-10 splide__slide">
+                    <p>Стиль и комфорт</p>
+                    <svg
+                            class="shrink-0 w-[37px] h-10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="43"
+                            viewBox="0 0 40 43"
+                            fill="none"
+                    >
+                        <path
+                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
+                                stroke="#363435"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        />
+                    </svg>
+                </li>
+                <li class="flex items-center gap-10 splide__slide">
+                    <p>Гарантия</p>
+                    <svg
+                            class="shrink-0 w-[37px] h-10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="43"
+                            viewBox="0 0 40 43"
+                            fill="none"
+                    >
+                        <path
+                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
+                                stroke="#363435"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        />
+                    </svg>
+                </li>
+                <li class="flex items-center gap-10 splide__slide">
+                    <p>Высокое качество</p>
+                    <svg
+                            class="shrink-0 w-[37px] h-10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="43"
+                            viewBox="0 0 40 43"
+                            fill="none"
+                    >
+                        <path
+                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
+                                stroke="#363435"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        />
+                    </svg>
+                </li>
+                <li class="flex items-center gap-10 splide__slide">
+                    <p>Стиль и комфорт</p>
+                    <svg
+                            class="shrink-0 w-[37px] h-10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="43"
+                            viewBox="0 0 40 43"
+                            fill="none"
+                    >
+                        <path
+                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
+                                stroke="#363435"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        />
+                    </svg>
+                </li>
+                <li class="flex items-center gap-10 splide__slide">
+                    <p>Гарантия</p>
+                    <svg
+                            class="shrink-0 w-[37px] h-10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="43"
+                            viewBox="0 0 40 43"
+                            fill="none"
+                    >
+                        <path
+                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
+                                stroke="#363435"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        />
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="mb-10 md:mb-[50px]">
+        <div class="container">
+            <div
+                    class="grid md:grid-cols-2 xl:grid-cols-5 duration-500 gap-10 lg:gap-[70px]"
+            >
+                <div class="xl:col-span-2 max-md:order-2">
+                    <div
+                            class="w-full h-[270px] md:h-[350px] xl:h-[450px] rounded-[60px] md:rounded-[120px]"
+                            data-aos="fade-right"
+                    >
+                        <img
+                                src="{% static '/project/image/about-us ind.png' %}"
+                                alt="about-us"
+                                class="object-fill w-full h-full"
+                        />
+                    </div>
+                </div>
+                <div
+                        class="flex flex-col justify-center xl:col-span-3 max-md:order-1 max-md:items-center"
+                >
+                    <h3
+                            class="pb-3 text-2xl font-normal md:text-3xl lg:text-4xl xl:text-5xl text-dark font-czizh max-md:text-center"
+                            data-aos="fade-left"
+                            data-aos-delay="40"
+                    >
+                        Совершенство в мелочах
+                    </h3>
+                    <p
+                            class="text-base md:text-lg text-dark text-justify md:text-start font-montserrat font-light pb-[30px]"
+                            data-aos="fade-left"
+                            data-aos-delay="50"
+                    >
+                        Наша компания была основана в 2008 году в городе Ташкенте
+                        несколькими энтузиастами, любящими свое дело. В начале это был
+                        небольшой цех по производству трикотажной продукции, который
+                        перерос в большую швейную фабрику. Сегодня ООО «Construction
+                        Solutions» — это предприятие со своими собственными
+                        производственными помещениями и складами, занимающими общую
+                        площадь более 2500 квадратных метров. Сама фабрика расположена в
+                        городе Нурафшан — административном центре Ташкентской области в
+                        18 километрах от города Ташкента. ​
+                    </p>
+                    <a
+                            href="#"
+                            class="btn-link"
+                            data-aos="fade-left"
+                            data-aos-delay="60"
+                    >Подробнее</a
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 md:py-20 xl:pt-[50px] xl:pb-[100px]">
+        <div
+                class="container flex flex-col items-center space-y-[20px] md:space-y-[30px]"
+        >
+            <div class="text-center">
+                <h3
+                        data-aos="fade-right"
+                        class="mb-2 text-2xl font-normal lg:mb-4 md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
+                >
+                    Стильная скромность
+                </h3>
+                <p
+                        data-aos="fade-right"
+                        data-aos-delay="100"
+                        class="text-sm font-light font-montserrat-alternates-light sm:text-base lg:text-lg font-montserrat"
+                >
+                    Наша философия заключается в создании одежды, которая не только
+                    подчеркивает ваш индивидуальный стиль, но также обеспечивает
+                    удобство и уверенность в любой ситуации.
+                </p>
+            </div>
+            <div
+                    class="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]"
+            >
+                <a
+                        href="#"
+                        data-aos="zoom-in"
+                        data-aos-delay="10"
+                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
+                >
+                    <img
+                            src="{% static '/project/image/product ind (7).png' %}"
+                            alt=""
+                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
+                    />
+                    <div
+                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                    >
+                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
+                            <h4
+                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                            >
+                                Медицинский костюм женский
+                            </h4>
+                            <button
+                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
+                            >
+                    <span class="text-xs font-normal md:text-sm font-montserrat"
+                    >Подробнее</span
+                    >
+                                <img
+                                        src="{% static '/project/image/arrow-left.svg' %}"
+                                        alt=""
+                                        class="hidden h-5 md:block w-7"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a
+                        href="#"
+                        data-aos="zoom-in"
+                        data-aos-delay="10"
+                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
+                >
+                    <img
+                            src="{% static '/project/image/product ind (7).png' %}"
+                            alt=""
+                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
+                    />
+                    <div
+                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                    >
+                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
+                            <h4
+                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                            >
+                                Медицинский костюм женский
+                            </h4>
+                            <button
+                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
+                            >
+                    <span class="text-xs font-normal md:text-sm font-montserrat"
+                    >Подробнее</span
+                    >
+                                <img
+                                        src="{% static '/project/image/arrow-left.svg' %}"
+                                        alt=""
+                                        class="hidden h-5 md:block w-7"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a
+                        href="#"
+                        data-aos="zoom-in"
+                        data-aos-delay="10"
+                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
+                >
+                    <img
+                            src="{% static '/project/image/product ind (7).png' %}"
+                            alt=""
+                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
+                    />
+                    <div
+                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                    >
+                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
+                            <h4
+                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                            >
+                                Медицинский костюм женский
+                            </h4>
+                            <button
+                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
+                            >
+                    <span class="text-xs font-normal md:text-sm font-montserrat"
+                    >Подробнее</span
+                    >
+                                <img
+                                        src="{% static '/project/image/arrow-left.svg' %}"
+                                        alt=""
+                                        class="hidden h-5 md:block w-7"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a
+                        href="#"
+                        data-aos="zoom-in"
+                        data-aos-delay="10"
+                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
+                >
+                    <img
+                            src="{% static '/project/image/product ind (7).png' %}"
+                            alt=""
+                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
+                    />
+                    <div
+                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                    >
+                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
+                            <h4
+                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                            >
+                                Медицинский костюм женский
+                            </h4>
+                            <button
+                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
+                            >
+                    <span class="text-xs font-normal md:text-sm font-montserrat"
+                    >Подробнее</span
+                    >
+                                <img
+                                        src="{% static '/project/image/arrow-left.svg' %}"
+                                        alt=""
+                                        class="hidden h-5 md:block w-7"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </a>
+                <a
+                        href="#"
+                        data-aos="zoom-in"
+                        data-aos-delay="10"
+                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
+                >
+                    <img
+                            src="{% static '/project/image/product ind (7).png' %}"
+                            alt=""
+                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
+                    />
+                    <div
+                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                    >
+                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
+                            <h4
+                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                            >
+                                Медицинский костюм женский
+                            </h4>
+                            <button
+                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
+                            >
+                    <span class="text-xs font-normal md:text-sm font-montserrat"
+                    >Подробнее</span
+                    >
+                                <img
+                                        src="{% static '/project/image/arrow-left.svg' %}"
+                                        alt=""
+                                        class="hidden h-5 md:block w-7"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="#" class="btn-link" data-aos="fade-up" data-aos-delay="60"
+            >Посмотреть все</a
+            >
+        </div>
+    </section>
+    <section class="rewards py-[40px] md:py-[50px]">
+        <div class="container text-light">
+            <h3
+                    class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl pb-[50px] text-center font-czizh font-normal"
+                    data-aos="zoom-in"
+            >
+                Наши достижения говорят о нас
+            </h3>
+            <div
+                    class="grid items-start justify-between grid-cols-2 font-medium md:items-center max-lg:gap-10 lg:flex font-montserrat"
+            >
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <h4
+                            class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                    >
+                <span
+                        data-purecounter-start="0"
+                        data-purecounter-end="14"
+                        data-purecounter-duration="1"
+                        class="purecounter"
+                ></span>
+                    </h4>
+                    <p class="text-sm md:text-lg">лет на рынке</p>
+                </div>
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="150">
+                    <h4
+                            class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                    >
+                <span
+                        data-purecounter-start="0"
+                        data-purecounter-end="2500"
+                        data-purecounter-duration="1"
+                        class="purecounter"
+                ></span
+                >м<sup>2</sup>
+                    </h4>
+                    <p class="text-sm md:text-lg">Производственные площади</p>
+                </div>
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <h4
+                            class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                    >
+                <span
+                        data-purecounter-start="0"
+                        data-purecounter-end="225"
+                        data-purecounter-duration="1"
+                        class="purecounter"
+                ></span>
+                    </h4>
+                    <p class="text-sm md:text-lg">рабочих мест</p>
+                </div>
+                <div class="text-center" data-aos="zoom-in" data-aos-delay="250">
+                    <h4
+                            class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                    >
+                <span
+                        data-purecounter-start="0"
+                        data-purecounter-end="120"
+                        data-purecounter-duration="1"
+                        class="purecounter"
+                ></span>
+                        к
+                    </h4>
+                    <p class="text-sm md:text-lg">Ежемесячный выпуск продукции</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 md:py-20 xl:py-[70px]">
+        <div class="container flex flex-col items-center">
+            <h2
+                    class="mb-5 text-2xl font-normal text-center text-black md:text-3xl lg:text-4xl xl:text-5xl md:mb-8 font-czizh"
+                    data-aos="zoom-up"
+            >
+                Наши крупнейшие клиенты
+            </h2>
+            <div class="w-full">
+                <div class="swiper aboutSwiper">
+                    <div
+                            class="swiper-wrapper"
+                            data-aos="zoom-in"
+                            data-aos-delay="100"
+                    >
+                        <a href="#" class="swiper-slide"
+                        ><img
+                                src="{% static '/project/image/clients (4).png' %}"
+                                alt=""
+                                class="w-full h-[70px] object-contain"
+                        /></a>
+                        <a href="#" class="swiper-slide"
+                        ><img
+                                src="{% static '/project/image/clients (3).png' %}"
+                                alt=""
+                                class="w-full h-[70px] object-contain"
+                        /></a>
+                        <a href="#" class="swiper-slide"
+                        ><img
+                                src="{% static '/project/image/clients (2).png' %}"
+                                alt=""
+                                class="w-full h-[70px] object-contain"
+                        /></a>
+                        <a href="#" class="swiper-slide"
+                        ><img
+                                src="{% static '/project/image/clients (1).png' %}"
+                                alt=""
+                                class="w-full h-[70px] object-contain"
+                        /></a>
+                        <a href="#" class="swiper-slide"
+                        ><img
+                                src="{% static '/project/image/clients (4).png' %}"
+                                alt=""
+                                class="w-full h-[70px] object-contain"
+                        /></a>
+                        <a href="#" class="swiper-slide"
+                        ><img
+                                src="{% static '/project/image/clients (3).png' %}"
+                                alt=""
+                                class="w-full h-[70px] object-contain"
+                        /></a>
+                        <a href="#" class="swiper-slide"
+                        ><img
+                                src="{% static '/project/image/clients (2).png' %}"
+                                alt=""
+                                class="w-full h-[70px] object-contain"
+                        /></a>
+                        <a href="#" class="swiper-slide"
+                        ><img
+                                src="{% static '/project/image/clients (1).png' %}"
+                                alt=""
+                                class="w-full h-[70px] object-contain"
+                        /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-8 bg-light">
+        <div
+                class="container grid grid-cols-1 gap-5 xs:grid-cols-2 lg:grid-cols-3 text-dark font-montserrat-alternates xs:gap-10"
+        >
+            <div class="max-xs:text-center">
+                <p
+                        class="text-[13px] pb-[10px] font-montserrat font-medium"
+                        style="line-height: 24px !important"
+                >
+                    <span class="">Наш адрес:</span>
+                    Юнусабадский район Проезд Олой бозори, Tashkent, Uzbekistan
+                </p>
+                <div class="flex gap-6 w-fit max-xs:mx-auto">
+                    <a
+                            href="https://www.instagram.com/abduganiev_technology/"
+                            class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
+                    >
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a
+                            href="https://www.telegram.com"
+                            class="flex items-center justify-center w-10 h-10 text-dark"
+                    >
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="40"
+                                viewBox="0 0 40 40"
+                                fill="none"
+                        >
+                            <path
+                                    d="M28 12.6022L24.9946 28.2923C24.9946 28.2923 24.5741 29.3801 23.4189 28.8584L16.4846 23.3526L16.4524 23.3364C17.3891 22.4654 24.6524 15.7027 24.9698 15.3961C25.4613 14.9214 25.1562 14.6387 24.5856 14.9974L13.8568 22.053L9.71764 20.6108C9.71764 20.6108 9.06626 20.3708 9.00359 19.8491C8.9401 19.3265 9.73908 19.0439 9.73908 19.0439L26.6131 12.1889C26.6131 12.1889 28 11.5579 28 12.6022Z"
+                                    fill="#363435"
+                            />
+                        </svg>
+                    </a>
+                    <a
+                            href="hhtps://www.whatsapp.com"
+                            class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
+                    >
+                        <i class="ri-whatsapp-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <a
+                        href="tel:+998 90 977 18 82"
+                        class="block text-sm lg:text-lg pb-[20px] font-montserrat font-medium"
+                        style="line-height: 34px !important"
+                >+998 90 990 90 90</a
+                >
+                <a
+                        href="mailto:info@aesyouform.uz"
+                        class="block font-normal font-montserrat"
+                        style="line-height: 24px !important"
+                >info@aesyouform.uz</a
+                >
+            </div>
+            <div
+                    class="flex flex-col items-center justify-end md:items-end xs:max-lg:col-span-2"
+            >
+                <div
+                        class="flex items-center gap-[9px] pb-4 w-fit mx-auto md:mx-0 font-montserrat font-normal"
+                >
+                    <p class="text-dark opacity-70 text-[13px]">Сайт создан</p>
+                    <a href="https://abduganiev.uz" target="_blank" class="w-10 h-10">
+                        <img
+                                class="object-contain w-full h-full"
+                                src="{% static '/project/image/abduganiev.png' %}"
+                                alt="abduganiev technology"
+                        />
+                    </a>
+                </div>
+                <p
+                        class="text-[#767676] text-[13px]"
+                        style="line-height: 24px !important"
+                >
+                    ©2023 easYOUform. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="{% static '/project/plugin/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static '/project/plugin/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static '/project/js/script.js' %}"></script>
+<script src="{% static '/project/plugin/aos/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>

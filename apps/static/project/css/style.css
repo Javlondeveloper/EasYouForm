@@ -1,0 +1,112 @@
+*{
+  line-height: normal !important;
+  scroll-behavior: smooth;
+}
+
+.rewards {
+  background-image: url(../image/rewards.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.btn-link {
+  width: fit-content;
+  padding: 14px 30px;
+  border: 1px solid #363435;
+  border-radius: 40px;
+  color: #363435;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 18px;
+  transition: all ease .3s;
+}
+
+.btn-link:hover {
+  background: #A368AA;
+  color: white;
+  border: 1px solid #A368AA;
+}
+
+/*navbar*/
+
+.swiper-pagination span {
+  background: #A368AA;
+}
+
+
+.nav--bg{
+  background: rgba(253, 249, 246, 0.90);
+  backdrop-filter: blur(5px);
+}
+
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marqueeAnimation 10s linear infinite;
+}
+
+
+/*@keyframes marqueeAnimation {*/
+/*  from {*/
+/*    transform: translateX(100%);*/
+/*  }*/
+/*  to {*/
+/*    transform: translateX(-100%);*/
+/*  }*/
+/*}*/
+
+
+/* Other browsers */
+*::-webkit-scrollbar{
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track{
+  background: #FDF9F6;
+}
+
+*::-webkit-scrollbar-thumb{
+  background-color: #A368AA;
+  border-radius: 0px;
+  border: 3px solid #FDF9F6;
+  border-radius: 7px;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .btn-link {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+ 
+}
+
+.product-card {
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%);
+backdrop-filter: blur(6.5px);
+}
+
+#navbar {
+  transition: all 0.3s ease; /* Adjust the duration as needed */
+}
+
+
+.about::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background-color: #F9F2F2;
+  z-index:0;
+}
