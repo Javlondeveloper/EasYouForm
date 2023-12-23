@@ -43,29 +43,29 @@
                     class="text-dark md:bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center gap-5 w-full h-screen fixed left-[100%] top-[70px] opacity-0 md:opacity-100 -right-[0%] duration-500 bg-light gap-5 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
             >
                 <li class="duration-500 hover:text-violet">
-                    <a href="/">Главная</a>
+                    <a href="{% url 'home' %}">Главная</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="/about">О нас</a>
+                    <a href="{% url 'about' %}">О нас</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./product.html">Наша продукция</a>
+                    <a href="{% url 'category-product' %}">Наша продукция</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./gallery.html">Галерея</a>
+                    <a href="{% url 'gallery' %}">Галерея</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./contact.html">Контакты</a>
+                    <a href="{% url 'contact' %}">Контакты</a>
                 </li>
             </ul>
             <div class="flex gap-x-2">
                 <a
-                        href="tel:+998 90 990 90 90"
+                        href="tel:{{ contact.phone_1 }}"
                         class="flex items-center text-sm gap-2.5 text-white bg-violet md:bg-transparent md:text-violet rounded-xl md:text-violet px-2 py-1.5 lg:text-lg"
                 >
                     <i class="ri-phone-line text-xl mt-0.5 block md:hidden"></i>
                     <span class="hidden font-normal md:block montserrat"
-                    >+998 90 990 90 90</span
+                    >{{ contact.phone_1 }}</span
                     >
                 </a>
                 <button
@@ -85,7 +85,7 @@
                 playsinline
         >
             <source
-                    src="{% static '/project/Image/Holo Sphere 360 (1).mp4' %}"
+                    src="{{ index_banner.video.url }}"
                     type="video/mp4"
             />
         </video>
@@ -107,7 +107,7 @@
                     только для вас
                 </h3>
                 <a
-                        href="#about"
+                        href="/about"
                         class="flex flex-col items-center gap-3.5 absolute bottom-[10%] animate-bounce"
                 >
               <span
@@ -120,125 +120,34 @@
             </div>
         </div>
 
-        <!--  font-montserrat font-light text-dark text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl   -->
     </header>
     <section
             id="mySlider"
             class="splide md:py-14 sm:py-10 py-7"
-            aria-label="Splide Basic HTML Example"
-    >
+            aria-label="Splide Basic HTML Example">
         <div class="splide__track">
-            <ul
-                    class="text-sm font-light splide__list font-montserrat text-dark sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl whitespace-nowrap"
-            >
-                <li class="flex items-center gap-10 splide__slide">
-                    <p>Высокое качество</p>
-                    <svg
-                            class="shrink-0 w-[37px] h-10"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="40"
-                            height="43"
-                            viewBox="0 0 40 43"
-                            fill="none"
-                    >
-                        <path
-                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
-                                stroke="#363435"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </li>
-                <li class="flex items-center gap-10 splide__slide">
-                    <p>Стиль и комфорт</p>
-                    <svg
-                            class="shrink-0 w-[37px] h-10"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="40"
-                            height="43"
-                            viewBox="0 0 40 43"
-                            fill="none"
-                    >
-                        <path
-                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
-                                stroke="#363435"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </li>
-                <li class="flex items-center gap-10 splide__slide">
-                    <p>Гарантия</p>
-                    <svg
-                            class="shrink-0 w-[37px] h-10"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="40"
-                            height="43"
-                            viewBox="0 0 40 43"
-                            fill="none"
-                    >
-                        <path
-                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
-                                stroke="#363435"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </li>
-                <li class="flex items-center gap-10 splide__slide">
-                    <p>Высокое качество</p>
-                    <svg
-                            class="shrink-0 w-[37px] h-10"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="40"
-                            height="43"
-                            viewBox="0 0 40 43"
-                            fill="none"
-                    >
-                        <path
-                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
-                                stroke="#363435"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </li>
-                <li class="flex items-center gap-10 splide__slide">
-                    <p>Стиль и комфорт</p>
-                    <svg
-                            class="shrink-0 w-[37px] h-10"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="40"
-                            height="43"
-                            viewBox="0 0 40 43"
-                            fill="none"
-                    >
-                        <path
-                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
-                                stroke="#363435"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </li>
-                <li class="flex items-center gap-10 splide__slide">
-                    <p>Гарантия</p>
-                    <svg
-                            class="shrink-0 w-[37px] h-10"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="40"
-                            height="43"
-                            viewBox="0 0 40 43"
-                            fill="none"
-                    >
-                        <path
-                                d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
-                                stroke="#363435"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                        />
-                    </svg>
-                </li>
+            <ul class="text-sm font-light splide__list font-montserrat text-dark sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl whitespace-nowrap">
+                {% for service in services %}
+                    <li class="flex items-center gap-10 splide__slide">
+                        <p>{{ service.name }}</p>
+                        <svg
+                                class="shrink-0 w-[37px] h-10"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                                height="43"
+                                viewBox="0 0 40 43"
+                                fill="none"
+                        >
+                            <path
+                                    d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
+                                    stroke="#363435"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                            />
+                        </svg>
+                    </li>
+                {% endfor %}
+
             </ul>
         </div>
     </section>
@@ -248,15 +157,9 @@
                     class="grid md:grid-cols-2 xl:grid-cols-5 duration-500 gap-10 lg:gap-[70px]"
             >
                 <div class="xl:col-span-2 max-md:order-2">
-                    <div
-                            class="w-full h-[270px] md:h-[350px] xl:h-[450px] rounded-[60px] md:rounded-[120px]"
-                            data-aos="fade-right"
-                    >
-                        <img
-                                src="{% static '/project/image/about-us ind.png' %}"
-                                alt="about-us"
-                                class="object-fill w-full h-full"
-                        />
+                    <div class="w-full h-[270px] md:h-[350px] xl:h-[450px] rounded-[60px] md:rounded-[120px]"
+                         data-aos="fade-right">
+                        <img src="{{ index_about.image.url }}" alt="about-us" class="object-fill w-full h-full"/>
                     </div>
                 </div>
                 <div
@@ -267,29 +170,16 @@
                             data-aos="fade-left"
                             data-aos-delay="40"
                     >
-                        Совершенство в мелочах
+                        {{ index_about.title }}
                     </h3>
                     <p
                             class="text-base md:text-lg text-dark text-justify md:text-start font-montserrat font-light pb-[30px]"
                             data-aos="fade-left"
                             data-aos-delay="50"
                     >
-                        Наша компания была основана в 2008 году в городе Ташкенте
-                        несколькими энтузиастами, любящими свое дело. В начале это был
-                        небольшой цех по производству трикотажной продукции, который
-                        перерос в большую швейную фабрику. Сегодня ООО «Construction
-                        Solutions» — это предприятие со своими собственными
-                        производственными помещениями и складами, занимающими общую
-                        площадь более 2500 квадратных метров. Сама фабрика расположена в
-                        городе Нурафшан — административном центре Ташкентской области в
-                        18 километрах от города Ташкента. ​
+                        {{ index_about.text|safe|striptags }}
                     </p>
-                    <a
-                            href="#"
-                            class="btn-link"
-                            data-aos="fade-left"
-                            data-aos-delay="60"
-                    >Подробнее</a
+                    <a href="#" class="btn-link" data-aos="fade-left" data-aos-delay="60">Подробнее</a
                     >
                 </div>
             </div>
@@ -304,198 +194,58 @@
                         data-aos="fade-right"
                         class="mb-2 text-2xl font-normal lg:mb-4 md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
                 >
-                    Стильная скромность
+                    {{ index_category_text.title }}
                 </h3>
                 <p
                         data-aos="fade-right"
                         data-aos-delay="100"
                         class="text-sm font-light font-montserrat-alternates-light sm:text-base lg:text-lg font-montserrat"
                 >
-                    Наша философия заключается в создании одежды, которая не только
-                    подчеркивает ваш индивидуальный стиль, но также обеспечивает
-                    удобство и уверенность в любой ситуации.
+                    {{ index_category_text.sub_title }}
                 </p>
             </div>
             <div
-                    class="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]"
-            >
-                <a
-                        href="#"
-                        data-aos="zoom-in"
-                        data-aos-delay="10"
-                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                >
-                    <img
-                            src="{% static '/project/image/product ind (7).png' %}"
-                            alt=""
-                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                    />
-                    <div
-                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                    class="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]">
+                {% for category in categories %}
+                    <a
+                            href="{% url 'products' category.slug %}"
+                            data-aos="zoom-in"
+                            data-aos-delay="10"
+                            class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
                     >
-                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                            <h4
-                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
-                            >
-                                Медицинский костюм женский
-                            </h4>
-                            <button
-                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                            >
+                        <img
+                                src="{{ category.image.url }}"
+                                alt=""
+                                class="object-cover w-full h-full duration-500 group-hover:scale-125"
+                        />
+                        <div
+                                class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                        >
+                            <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
+                                <h4
+                                        class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                                >
+                                    {{ category.title }}
+                                </h4>
+                                <button
+                                        class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
+                                >
                     <span class="text-xs font-normal md:text-sm font-montserrat"
                     >Подробнее</span
                     >
-                                <img
-                                        src="{% static '/project/image/arrow-left.svg' %}"
-                                        alt=""
-                                        class="hidden h-5 md:block w-7"
-                                />
-                            </button>
+                                    <img
+                                            src="{% static '/project/image/arrow-left.svg' %}"
+                                            alt=""
+                                            class="hidden h-5 md:block w-7"
+                                    />
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a
-                        href="#"
-                        data-aos="zoom-in"
-                        data-aos-delay="10"
-                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                >
-                    <img
-                            src="{% static '/project/image/product ind (7).png' %}"
-                            alt=""
-                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                    />
-                    <div
-                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
-                    >
-                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                            <h4
-                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
-                            >
-                                Медицинский костюм женский
-                            </h4>
-                            <button
-                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                            >
-                    <span class="text-xs font-normal md:text-sm font-montserrat"
-                    >Подробнее</span
-                    >
-                                <img
-                                        src="{% static '/project/image/arrow-left.svg' %}"
-                                        alt=""
-                                        class="hidden h-5 md:block w-7"
-                                />
-                            </button>
-                        </div>
-                    </div>
-                </a>
-                <a
-                        href="#"
-                        data-aos="zoom-in"
-                        data-aos-delay="10"
-                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                >
-                    <img
-                            src="{% static '/project/image/product ind (7).png' %}"
-                            alt=""
-                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                    />
-                    <div
-                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
-                    >
-                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                            <h4
-                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
-                            >
-                                Медицинский костюм женский
-                            </h4>
-                            <button
-                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                            >
-                    <span class="text-xs font-normal md:text-sm font-montserrat"
-                    >Подробнее</span
-                    >
-                                <img
-                                        src="{% static '/project/image/arrow-left.svg' %}"
-                                        alt=""
-                                        class="hidden h-5 md:block w-7"
-                                />
-                            </button>
-                        </div>
-                    </div>
-                </a>
-                <a
-                        href="#"
-                        data-aos="zoom-in"
-                        data-aos-delay="10"
-                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                >
-                    <img
-                            src="{% static '/project/image/product ind (7).png' %}"
-                            alt=""
-                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                    />
-                    <div
-                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
-                    >
-                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                            <h4
-                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
-                            >
-                                Медицинский костюм женский
-                            </h4>
-                            <button
-                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                            >
-                    <span class="text-xs font-normal md:text-sm font-montserrat"
-                    >Подробнее</span
-                    >
-                                <img
-                                        src="{% static '/project/image/arrow-left.svg' %}"
-                                        alt=""
-                                        class="hidden h-5 md:block w-7"
-                                />
-                            </button>
-                        </div>
-                    </div>
-                </a>
-                <a
-                        href="#"
-                        data-aos="zoom-in"
-                        data-aos-delay="10"
-                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                >
-                    <img
-                            src="{% static '/project/image/product ind (7).png' %}"
-                            alt=""
-                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                    />
-                    <div
-                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
-                    >
-                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                            <h4
-                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
-                            >
-                                Медицинский костюм женский
-                            </h4>
-                            <button
-                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                            >
-                    <span class="text-xs font-normal md:text-sm font-montserrat"
-                    >Подробнее</span
-                    >
-                                <img
-                                        src="{% static '/project/image/arrow-left.svg' %}"
-                                        alt=""
-                                        class="hidden h-5 md:block w-7"
-                                />
-                            </button>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                {% endfor %}
+
             </div>
-            <a href="#" class="btn-link" data-aos="fade-up" data-aos-delay="60"
+            <a href="{% url 'category-product'  %}" class="btn-link" data-aos="fade-up" data-aos-delay="60"
             >Посмотреть все</a
             >
         </div>
@@ -517,7 +267,7 @@
                     >
                 <span
                         data-purecounter-start="0"
-                        data-purecounter-end="14"
+                        data-purecounter-end="{{ about_us.experience }}"
                         data-purecounter-duration="1"
                         class="purecounter"
                 ></span>
@@ -530,7 +280,7 @@
                     >
                 <span
                         data-purecounter-start="0"
-                        data-purecounter-end="2500"
+                        data-purecounter-end="{{ about_us.production_area }}"
                         data-purecounter-duration="1"
                         class="purecounter"
                 ></span
@@ -544,7 +294,7 @@
                     >
                 <span
                         data-purecounter-start="0"
-                        data-purecounter-end="225"
+                        data-purecounter-end="{{ about_us.work_place }}"
                         data-purecounter-duration="1"
                         class="purecounter"
                 ></span>
@@ -557,7 +307,7 @@
                     >
                 <span
                         data-purecounter-start="0"
-                        data-purecounter-end="120"
+                        data-purecounter-end="{{ about_us.monthly_production_output }}"
                         data-purecounter-duration="1"
                         class="purecounter"
                 ></span>
@@ -581,56 +331,16 @@
                     <div
                             class="swiper-wrapper"
                             data-aos="zoom-in"
-                            data-aos-delay="100"
-                    >
-                        <a href="#" class="swiper-slide"
-                        ><img
-                                src="{% static '/project/image/clients (4).png' %}"
-                                alt=""
-                                class="w-full h-[70px] object-contain"
-                        /></a>
-                        <a href="#" class="swiper-slide"
-                        ><img
-                                src="{% static '/project/image/clients (3).png' %}"
-                                alt=""
-                                class="w-full h-[70px] object-contain"
-                        /></a>
-                        <a href="#" class="swiper-slide"
-                        ><img
-                                src="{% static '/project/image/clients (2).png' %}"
-                                alt=""
-                                class="w-full h-[70px] object-contain"
-                        /></a>
-                        <a href="#" class="swiper-slide"
-                        ><img
-                                src="{% static '/project/image/clients (1).png' %}"
-                                alt=""
-                                class="w-full h-[70px] object-contain"
-                        /></a>
-                        <a href="#" class="swiper-slide"
-                        ><img
-                                src="{% static '/project/image/clients (4).png' %}"
-                                alt=""
-                                class="w-full h-[70px] object-contain"
-                        /></a>
-                        <a href="#" class="swiper-slide"
-                        ><img
-                                src="{% static '/project/image/clients (3).png' %}"
-                                alt=""
-                                class="w-full h-[70px] object-contain"
-                        /></a>
-                        <a href="#" class="swiper-slide"
-                        ><img
-                                src="{% static '/project/image/clients (2).png' %}"
-                                alt=""
-                                class="w-full h-[70px] object-contain"
-                        /></a>
-                        <a href="#" class="swiper-slide"
-                        ><img
-                                src="{% static '/project/image/clients (1).png' %}"
-                                alt=""
-                                class="w-full h-[70px] object-contain"
-                        /></a>
+                            data-aos-delay="100">
+                        {% for client in clients %}
+                            <a href="#" class="swiper-slide"
+                            ><img
+                                    src="{{ client.image.url }}"
+                                    alt=""
+                                    class="w-full h-[70px] object-contain"
+                            /></a>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
@@ -646,17 +356,17 @@
                         style="line-height: 24px !important"
                 >
                     <span class="">Наш адрес:</span>
-                    Юнусабадский район Проезд Олой бозори, Tashkent, Uzbekistan
+                    {{ contact.address }}
                 </p>
                 <div class="flex gap-6 w-fit max-xs:mx-auto">
                     <a
-                            href="https://www.instagram.com/abduganiev_technology/"
+                            href="{{ social.instagram }}"
                             class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
                     >
                         <i class="ri-instagram-line"></i>
                     </a>
                     <a
-                            href="https://www.telegram.com"
+                            href="{{ social.telegram }}"
                             class="flex items-center justify-center w-10 h-10 text-dark"
                     >
                         <svg
@@ -673,7 +383,7 @@
                         </svg>
                     </a>
                     <a
-                            href="hhtps://www.whatsapp.com"
+                            href="{{ social.whatsup }}"
                             class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
                     >
                         <i class="ri-whatsapp-fill"></i>
@@ -682,16 +392,16 @@
             </div>
             <div class="text-center">
                 <a
-                        href="tel:+998 90 977 18 82"
+                        href="tel:{{ contact.phone_2 }}"
                         class="block text-sm lg:text-lg pb-[20px] font-montserrat font-medium"
                         style="line-height: 34px !important"
-                >+998 90 990 90 90</a
+                >{{ contact.phone_2 }}</a
                 >
                 <a
-                        href="mailto:info@aesyouform.uz"
+                        href="mailto:{{ contact.email }}"
                         class="block font-normal font-montserrat"
                         style="line-height: 24px !important"
-                >info@aesyouform.uz</a
+                >{{ contact.email }}</a
                 >
             </div>
             <div

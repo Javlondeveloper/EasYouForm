@@ -40,29 +40,29 @@
                     class="text-dark md:bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center gap-5 w-full h-screen fixed left-[100%] top-[70px] opacity-0 md:opacity-100 -right-[0%] duration-500 bg-light gap-5 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
             >
                 <li class="duration-500 hover:text-violet">
-                    <a href="/">Главная</a>
+                    <a href="{% url 'home' %}">Главная</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="/about">О нас</a>
+                    <a href="{% url 'about' %}">О нас</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
                     <a href="./product.html">Наша продукция</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./gallery.html">Галерея</a>
+                    <a href="{% url 'gallery' %}">Галерея</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./contact.html">Контакты</a>
+                    <a href="{% url 'contact' %}">Контакты</a>
                 </li>
             </ul>
             <div class="flex gap-x-2">
                 <a
-                        href="tel:+998 90 990 90 90"
+                        href="{{ contact.phone_1 }}"
                         class="flex items-center text-sm gap-2.5 text-white bg-violet md:bg-transparent md:text-violet rounded-xl md:text-violet px-2 py-1.5 lg:text-lg"
                 >
                     <i class="ri-phone-line text-xl mt-0.5 block md:hidden"></i>
                     <span class="hidden font-normal md:block montserrat"
-                    >+998 90 990 90 90</span
+                    >{{ contact.phone_1 }}</span
                     >
                 </a>
                 <button
@@ -89,7 +89,7 @@
                     <span class="text-violet">
                       Режим работы: 
                     </span>
-                                <span>Пн-Пт с 10:00 до 19:00</span>
+                                <span>{{ contact.working_hours }}</span>
                             </p>
                         </li>
                         <li>
@@ -97,7 +97,7 @@
                     <span class="text-violet">
                       Телефон: 
                     </span>
-                                <span>+998 90 977 18 82 </span>
+                                <span>{{ contact.phone_2 }} </span>
                             </p>
                         </li>
                         <li>
@@ -105,7 +105,7 @@
                     <span class="text-violet">
                       Электронная почта:
                     </span>
-                                <span> info@aesyouform.uz </span>
+                                <span>{{ contact.email }}</span>
                             </p>
                         </li>
                         <li>
@@ -113,14 +113,14 @@
                     <span class="text-violet">
                       Наш адрес: 
                     </span>
-                                <span>Юнусабадский район Проезд Олой бозори, Tashkent, Uzbekistan</span>
+                                <span>{{ contact.address }}</span>
                             </p>
                         </li>
                     </ul>
                     <div class="flex gap-6 w-fit max-xs:mx-auto">
                         <a
                                 data-aos="zoom-in"
-                                href="https://www.instagram.com/abduganiev_technology/"
+                                href="{{ social.instagram }}"
                                 class="flex items-center justify-center text-2xl text-dark"
                         >
                             <i class="ri-instagram-line"></i>
@@ -128,7 +128,7 @@
                         <a
                                 data-aos="zoom-in"
                                 data-aos-delay="10"
-                                href="https://www.telegram.com"
+                                href="{{ social.telegram }}"
                                 class="flex items-center justify-center text-2xl text-dark"
                         >
                             <svg
@@ -147,7 +147,7 @@
                         <a
                                 data-aos="zoom-in"
                                 data-aos-delay="20"
-                                href="hhtps://www.whatsapp.com"
+                                href="{{ social.whatsup }}"
                                 class="flex items-center justify-center text-2xl text-dark"
                         >
                             <i class="ri-whatsapp-fill"></i>
@@ -156,13 +156,12 @@
                 </div>
                 <div class="w-full h-full aspect-video md:aspect-square">
                     <iframe class="w-full h-full"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.6348895355063!2d69.248731983837!3d41.29505004766074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b94effcbfff%3A0xd931165a53b433f3!2sWIKIDEV!5e0!3m2!1suz!2s!4v1702987566222!5m2!1suz!2s"
+                            src="{{ contact.map }}"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </section>
-
 
     <footer class="py-8 bg-light">
         <div
@@ -174,17 +173,17 @@
                         style="line-height: 24px !important"
                 >
                     <span class="">Наш адрес:</span>
-                    Юнусабадский район Проезд Олой бозори, Tashkent, Uzbekistan
+                    {{ contact.address }}
                 </p>
                 <div class="flex gap-6 w-fit max-xs:mx-auto">
                     <a
-                            href="https://www.instagram.com/abduganiev_technology/"
+                            href="{{ social.instagram }}"
                             class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
                     >
                         <i class="ri-instagram-line"></i>
                     </a>
                     <a
-                            href="https://www.telegram.com"
+                            href="{{ social.telegram }}"
                             class="flex items-center justify-center w-10 h-10 text-dark"
                     >
                         <svg
@@ -201,7 +200,7 @@
                         </svg>
                     </a>
                     <a
-                            href="hhtps://www.whatsapp.com"
+                            href="{{ social.whatsup }}"
                             class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
                     >
                         <i class="ri-whatsapp-fill"></i>
@@ -210,16 +209,16 @@
             </div>
             <div class="text-center">
                 <a
-                        href="tel:+998 90 977 18 82"
+                        href="tel:{{ contact.phone_2 }}"
                         class="block text-sm lg:text-lg pb-[20px] font-montserrat font-medium"
                         style="line-height: 34px !important"
-                >+998 90 990 90 90</a
+                >{{ contact.phone_2 }}</a
                 >
                 <a
-                        href="mailto:info@aesyouform.uz"
+                        href="mailto:{{ contact.email }}"
                         class="block font-normal font-montserrat"
                         style="line-height: 24px !important"
-                >info@aesyouform.uz</a
+                >{{ contact.email }}</a
                 >
             </div>
             <div
@@ -246,6 +245,7 @@
             </div>
         </div>
     </footer>
+
 </div>
 <script src="{% static '/project/plugin/swiper/swiper-bundle.min.js' %}"></script>
 <script src="{% static '/project/plugin/purecounter/purecounter_vanilla.js' %}"></script>

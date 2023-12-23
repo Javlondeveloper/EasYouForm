@@ -28,7 +28,7 @@
                 id="navbar-container"
                 class="transition duration-700 navbar-rounded container nav--bg duration-400 py-2.5 px-5 flex items-center justify-between"
         >
-            <a href="/" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
+            <a href="{% url 'home' %}" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
                 <img
                         src="{% static '/project/image/logo.png' %}"
                         alt="easYouform"
@@ -39,29 +39,29 @@
                     class="text-dark bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center gap-5 w-full h-screen fixed top-[100%] -right-[0%] duration-500 bg-light gap-5 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
             >
                 <li class="duration-500 hover:text-violet">
-                    <a href="/">Главная</a>
+                    <a href="{% url 'home' %}">Главная</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="/about">О нас</a>
+                    <a href="{% url 'about' %}">О нас</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./product.html">Наша продукция</a>
+                    <a href="{% url 'category-product' %}">Наша продукция</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./gallery.html">Галерея</a>
+                    <a href="{% url 'gallery' %}">Галерея</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./contact.html">Контакты</a>
+                    <a href="{% url 'contact' %}">Контакты</a>
                 </li>
             </ul>
             <div class="flex gap-x-2">
                 <a
-                        href="tel:+998 90 990 90 90"
+                        href="{{ contact.phone_1 }}"
                         class="flex items-center text-sm gap-2.5 text-white bg-violet md:bg-transparent md:text-violet rounded-xl md:text-violet px-2 py-1.5 lg:text-lg"
                 >
                     <i class="ri-phone-line text-xl mt-0.5 block md:hidden"></i>
                     <span class="hidden font-normal md:block montserrat"
-                    >+998 90 990 90 90</span
+                    >{{ contact.phone_1 }}</span
                     >
                 </a>
                 <button
@@ -79,17 +79,14 @@
                         class="text-2xl font-normal text-center md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
                         data-aos="fade-up"
                 >
-                    О нашей компании
+                    {{ about.title}}
                 </h3>
                 <p
                         class="w-full md:w-[70%] text-center text-base md:text-lg text-dark font-montserrat font-light pb-[30px]"
                         data-aos="fade-up"
                         data-aos-delay="50"
                 >
-                    Добро пожаловать в easYouform - место, где стиль встречает
-                    комфорт! Мы являемся ведущими производителями высококачественных
-                    текстильных изделий, с особым акцентом на элегантные и стильные
-                    женские платья.
+            {{ about.text_up|safe|striptags }}
                 </p>
             </div>
             <div
@@ -99,24 +96,14 @@
             >
                 <img
                         class="object-cover w-full h-full"
-                        src="{% static '/project//image/header ind.png' %}"
+                        src="{{ about.image.url }}"
                 />
             </div>
             <p
                     class="text-center text-base md:text-lg text-dark font-montserrat font-light pb-[30px]"
                     data-aos="fade-up"
             >
-                Наша компания занимается производством, реализацией и поставками
-                современной. Мы самостоятельно разрабатываем элегантные модели,
-                красочные цвета профессиональной одежды для всех уровней
-                медицинского персонала и изготавливаем их из импортных материалов.
-                Продажа изделий осуществляется как оптом, так и в розницу. Кроме
-                того, мы осуществляем поставку медицинской одежды во всех регионах
-                Узбекистана. Ассортимент продукции, представленный нашей компанией,
-                включает в себя широкий модельный ряд медицинской одежды: халаты,
-                костюмы. Собственное, четко отлаженное швейное производство и
-                новейшие оборудование позволяет нам выпускать качественную
-                медицинскую одежду по доступным ценам.
+                {{ about.text_down|safe|striptags }}
             </p>
         </div>
     </section>
@@ -129,6 +116,7 @@
                 Наши особенности:
             </h2>
             <div class="grid grid-cols-1 gap-3 md:gap-5 md:grid-cols-2">
+                {% for feature in about.features.all %}
                 <div
                         data-aos="zoom-in" data-aos-delay="50"
                         class="p-5 space-y-1 border rounded-xl border-violet font-montserrat h-fit"
@@ -138,65 +126,13 @@
                     >
                         1
                     </h4>
-                    <h5 class="text-lg md:text-xl text-violet">Творческий Дизайн:</h5>
+                    <h5 class="text-lg md:text-xl text-violet">{{ feature.title }}:</h5>
                     <p class="text-sm text-justify md:text-lg md:text-justify">
-                        Наша команда опытных дизайнеров всегда следит за последними
-                        тенденциями моды, чтобы предложить вам уникальные и актуальные
-                        стили. Мы создаем платья, которые выражают ваш индивидуальный
-                        вкус и подчеркивают вашу красоту.
+                        {{ feature.text|safe|striptags }}
                     </p>
                 </div>
-                <div
-                        data-aos="zoom-in" data-aos-delay="100"
-                        class="p-5 space-y-1 border rounded-xl border-violet font-montserrat h-fit"
-                >
-                    <h4
-                            class="text-xl font-medium md:text-2xl md:text-3xl text-violet"
-                    >
-                        1
-                    </h4>
-                    <h5 class="text-lg md:text-xl text-violet">Творческий Дизайн:</h5>
-                    <p class="text-sm text-justify md:text-lg md:text-justify">
-                        Наша команда опытных дизайнеров всегда следит за последними
-                        тенденциями моды, чтобы предложить вам уникальные и актуальные
-                        стили. Мы создаем платья, которые выражают ваш индивидуальный
-                        вкус и подчеркивают вашу красоту.
-                    </p>
-                </div>
-                <div
-                        data-aos="zoom-in" data-aos-delay="150"
-                        class="p-5 space-y-1 border rounded-xl border-violet font-montserrat h-fit"
-                >
-                    <h4
-                            class="text-xl font-medium md:text-2xl md:text-3xl text-violet"
-                    >
-                        1
-                    </h4>
-                    <h5 class="text-lg md:text-xl text-violet">Творческий Дизайн:</h5>
-                    <p class="text-sm text-justify md:text-lg md:text-justify">
-                        Наша команда опытных дизайнеров всегда следит за последними
-                        тенденциями моды, чтобы предложить вам уникальные и актуальные
-                        стили. Мы создаем платья, которые выражают ваш индивидуальный
-                        вкус и подчеркивают вашу красоту.
-                    </p>
-                </div>
-                <div
-                        data-aos="zoom-in" data-aos-delay="200"
-                        class="p-5 space-y-1 border rounded-xl border-violet font-montserrat h-fit"
-                >
-                    <h4
-                            class="text-xl font-medium md:text-2xl md:text-3xl text-violet"
-                    >
-                        1
-                    </h4>
-                    <h5 class="text-lg md:text-xl text-violet">Творческий Дизайн:</h5>
-                    <p class="text-sm text-justify md:text-lg md:text-justify">
-                        Наша команда опытных дизайнеров всегда следит за последними
-                        тенденциями моды, чтобы предложить вам уникальные и актуальные
-                        стили. Мы создаем платья, которые выражают ваш индивидуальный
-                        вкус и подчеркивают вашу красоту.
-                    </p>
-                </div>
+                {% endfor %}
+                
             </div>
         </div>
     </section>
@@ -258,7 +194,7 @@
                     >
                 <span
                         data-purecounter-start="0"
-                        data-purecounter-end="120"
+                        data-purecounter-end="1202323"
                         data-purecounter-duration="1"
                         class="purecounter"
                 ></span>

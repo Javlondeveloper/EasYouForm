@@ -28,7 +28,7 @@
                 id="navbar-container"
                 class="transition duration-700 navbar-rounded container nav--bg duration-400 py-2.5 px-5 flex items-center justify-between"
         >
-            <a href="/" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
+            <a href="{% url 'home' %}" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
                 <img
                         src="{% static '/project/image/logo.png' %}"
                         alt="easYouform"
@@ -39,29 +39,29 @@
                     class="text-dark md:bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center gap-5 w-full h-screen fixed left-[100%] top-[70px] opacity-0 md:opacity-100 -right-[0%] duration-500 bg-light gap-5 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
             >
                 <li class="duration-500 hover:text-violet">
-                    <a href="/">Главная</a>
+                    <a href="{% url 'home' %}">Главная</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="/about">О нас</a>
+                    <a href="{% url 'about' %}">О нас</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./product.html">Наша продукция</a>
+                    <a href="{% url 'category-product' %}">Наша продукция</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./gallery.html">Галерея</a>
+                    <a href="{% url 'gallery' %}">Галерея</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./contact.html">Контакты</a>
+                    <a href="{% url 'contact' %}">Контакты</a>
                 </li>
             </ul>
             <div class="flex gap-x-2">
                 <a
-                        href="tel:+998 90 990 90 90"
+                        href="{{ contact.phone_1 }}"
                         class="flex items-center text-sm gap-2.5 text-white bg-violet md:bg-transparent md:text-violet rounded-xl md:text-violet px-2 py-1.5 lg:text-lg"
                 >
                     <i class="ri-phone-line text-xl mt-0.5 block md:hidden"></i>
                     <span class="hidden font-normal md:block montserrat"
-                    >+998 90 990 90 90</span
+                    >{{ contact.phone_1 }}</span
                     >
                 </a>
                 <button
@@ -81,126 +81,49 @@
                         data-aos="fade-right"
                         class="mb-2 text-2xl font-normal lg:mb-4 md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
                 >
-                    Стильная скромность
+                    {{ product_page.title }}
                 </h3>
                 <p
                         data-aos="fade-right"
                         data-aos-delay="100"
                         class="text-sm font-light font-montserrat-alternates-light sm:text-base lg:text-lg font-montserrat"
                 >
-                    Наша философия заключается в создании одежды, которая не только
-                    подчеркивает ваш индивидуальный стиль, но также обеспечивает
-                    удобство и уверенность в любой ситуации.
+                    {{ product_page.sub_title }}
                 </p>
             </div>
-            <div
-                    class="grid grid-cols-2 md:grid-cols-4 gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]"
-            >
-                <a
-                        href="#"
-                        data-aos="zoom-in"
-                        data-aos-delay="10"
-                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                >
-                    <img
-                            src="{% static '/project/image/product ind (7).png' %}"
-                            alt=""
-                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                    />
-                    <div
-                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]">
+                {% for product in products %}
+                    <a
+                            href="{% url 'product_detail' product.slug %}"
+                            data-aos="zoom-in"
+                            data-aos-delay="10"
+                            class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
                     >
-                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                            <h4
-                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
-                            >
-                                Медицинский костюм женский
-                            </h4>
-                            <button
-                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                            >
-                    <span class="text-xs font-normal md:text-sm font-montserrat"
-                    >Подробнее</span
-                    >
-                                <img
-                                        src="{% static '/project/image/arrow-left.svg' %}"
-                                        alt=""
-                                        class="hidden h-5 md:block w-7"
-                                />
-                            </button>
+                        <img
+                                src="{{ product.images.first.image.url }}"
+                                alt=""
+                                class="object-cover w-full h-full duration-500 group-hover:scale-125"
+                        />
+                        <div
+                                class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                        >
+                            <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
+                                <h4
+                                        class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                                >
+                                    {{ product.name }}
+                                </h4>
+                                <button
+                                        class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
+                                >
+                                    <span class="text-xs font-normal md:text-sm font-montserrat">Подробнее</span>
+                                    <img src="{% static '/project/image/arrow-left.svg' %}" alt=""
+                                         class="hidden h-5 md:block w-7"/>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a
-                        href="#"
-                        data-aos="zoom-in"
-                        data-aos-delay="10"
-                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                >
-                    <img
-                            src="{% static '/project/image/product ind (7).png' %}"
-                            alt=""
-                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                    />
-                    <div
-                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
-                    >
-                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                            <h4
-                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
-                            >
-                                Медицинский костюм женский
-                            </h4>
-                            <button
-                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                            >
-                    <span class="text-xs font-normal md:text-sm font-montserrat"
-                    >Подробнее</span
-                    >
-                                <img
-                                        src="{% static '/project/image/arrow-left.svg' %}"
-                                        alt=""
-                                        class="hidden h-5 md:block w-7"
-                                />
-                            </button>
-                        </div>
-                    </div>
-                </a>
-                <a
-                        href="#"
-                        data-aos="zoom-in"
-                        data-aos-delay="10"
-                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                >
-                    <img
-                            src="{% static '/project/image/product ind (7).png' %}"
-                            alt=""
-                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                    />
-                    <div
-                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
-                    >
-                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                            <h4
-                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
-                            >
-                                Медицинский костюм женский
-                            </h4>
-                            <button
-                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                            >
-                    <span class="text-xs font-normal md:text-sm font-montserrat"
-                    >Подробнее</span
-                    >
-                                <img
-                                        src="{% static '/project/image/arrow-left.svg' %}"
-                                        alt=""
-                                        class="hidden h-5 md:block w-7"
-                                />
-                            </button>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -215,17 +138,17 @@
                         style="line-height: 24px !important"
                 >
                     <span class="">Наш адрес:</span>
-                    Юнусабадский район Проезд Олой бозори, Tashkent, Uzbekistan
+                    {{ contact.address }}
                 </p>
                 <div class="flex gap-6 w-fit max-xs:mx-auto">
                     <a
-                            href="https://www.instagram.com/abduganiev_technology/"
+                            href="{{ social.instagram }}"
                             class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
                     >
                         <i class="ri-instagram-line"></i>
                     </a>
                     <a
-                            href="https://www.telegram.com"
+                            href="{{ social.telegram }}"
                             class="flex items-center justify-center w-10 h-10 text-dark"
                     >
                         <svg
@@ -242,7 +165,7 @@
                         </svg>
                     </a>
                     <a
-                            href="hhtps://www.whatsapp.com"
+                            href="{{ social.whatsup }}"
                             class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
                     >
                         <i class="ri-whatsapp-fill"></i>
@@ -251,16 +174,16 @@
             </div>
             <div class="text-center">
                 <a
-                        href="tel:+998 90 977 18 82"
+                        href="tel:{{ contact.phone_2 }}"
                         class="block text-sm lg:text-lg pb-[20px] font-montserrat font-medium"
                         style="line-height: 34px !important"
-                >+998 90 990 90 90</a
+                >{{ contact.phone_2 }}</a
                 >
                 <a
-                        href="mailto:info@aesyouform.uz"
+                        href="mailto:{{ contact.email }}"
                         class="block font-normal font-montserrat"
                         style="line-height: 24px !important"
-                >info@aesyouform.uz</a
+                >{{ contact.email }}</a
                 >
             </div>
             <div
@@ -287,6 +210,7 @@
             </div>
         </div>
     </footer>
+
 </div>
 <script src="{% static '/project/plugin/swiper/swiper-bundle.min.js' %}"></script>
 <script src="{% static '/project/plugin/purecounter/purecounter_vanilla.js' %}"></script>

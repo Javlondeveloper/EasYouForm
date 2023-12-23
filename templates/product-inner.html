@@ -39,29 +39,29 @@
                     class="text-dark md:bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center gap-5 w-full h-screen fixed left-[100%] top-[70px] opacity-0 md:opacity-100 -right-[0%] duration-500 bg-light gap-5 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
             >
                 <li class="duration-500 hover:text-violet">
-                    <a href="/">Главная</a>
+                    <a href="{% url 'home' %}">Главная</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="/about">О нас</a>
+                    <a href="{% url 'about' %}">О нас</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./product.html">Наша продукция</a>
+                    <a href="{% url 'category-product' %}">Наша продукция</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./gallery.html">Галерея</a>
+                    <a href="{% url 'gallery' %}">Галерея</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="./contact.html">Контакты</a>
+                    <a href="{% url 'contact' %}">Контакты</a>
                 </li>
             </ul>
             <div class="flex gap-x-2">
                 <a
-                        href="tel:+998 90 990 90 90"
+                        href="tel:{{ contact.phone_1 }}"
                         class="flex items-center text-sm gap-2.5 text-white bg-violet md:bg-transparent md:text-violet rounded-xl md:text-violet px-2 py-1.5 lg:text-lg"
                 >
                     <i class="ri-phone-line text-xl mt-0.5 block md:hidden"></i>
                     <span class="hidden font-normal md:block montserrat"
-                    >+998 90 990 90 90</span
+                    >{{ contact.phone_1 }}</span
                     >
                 </a>
                 <button
@@ -76,35 +76,25 @@
         <div class="container">
             <div class="grid grid-cols-1 gap-[68px] md:grid-cols-2" style="grid-auto-rows: minmax(0, min-content);">
                 <div class="w-full h-full">
-                    <img src="{% static '/project/image/product ind (2).png' %}" class="object-cover w-full h-full"/>
+                    <img src="{{ product.images.first.image.url }}" class="object-cover w-full h-full"/>
                 </div>
                 <div class="font-montserrat space-y-[30px] text-dark space-y-3 w-auto h-fit">
                     <div class="space-y-2.5 text-xl md:text-3xl">
                         <h1 class="font-medium">
-                            Медицинский костюм женский
+                            {{ product.name }}
                         </h1>
                         <p class="font-light text-violet">
-                            150 000 Сум
+                            {{ product.price }} Сум
                         </p>
                     </div>
                     <div class="space-y-2.5">
                         <h5 class="text-lg font-medium md:text-xl">Доступные размеры</h5>
                         <div class="flex flex-wrap gap-2.5">
-                            <button class="border border-violet p-2.5 text-dark hover:bg-violet hover:text-white duration-300">
-                                38
-                            </button>
-                            <button class="border border-violet p-2.5 text-dark hover:bg-violet hover:text-white duration-300">
-                                38
-                            </button>
-                            <button class="border border-violet p-2.5 text-dark hover:bg-violet hover:text-white duration-300">
-                                38
-                            </button>
-                            <button class="border border-violet p-2.5 text-dark hover:bg-violet hover:text-white duration-300">
-                                38
-                            </button>
-                            <button class="border border-violet p-2.5 text-dark hover:bg-violet hover:text-white duration-300">
-                                38
-                            </button>
+                            {% for size in product.sizes.all %}
+                                <button class="border border-violet p-2.5 text-dark hover:bg-violet hover:text-white duration-300">
+                                    {{ size.size }}
+                                </button>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="space-y-3 text-sm md:text-lg">
@@ -113,7 +103,7 @@
                     Состав:  
                   </span>
                             <span class="font-light">
-                    Хлопок 35%, Полиэстер 65%
+                    {{ product.compound }}
                   </span>
                         </p>
                         <p class="space-x-2">
@@ -121,7 +111,7 @@
                     Размер товара на модели: 
                   </span>
                             <span class="font-light">
-                    42-64
+                    {{ product.size }}
                   </span>
                         </p>
                         <p class="space-x-2">
@@ -129,7 +119,7 @@
                     Цвет:  
                   </span>
                             <span class="font-light">
-                    Белый
+                    {{ product.colour }}
                   </span>
                         </p>
                         <p class="space-x-2">
@@ -137,7 +127,7 @@
                     Рост модели на фото:  
                   </span>
                             <span class="font-light">
-                    176
+                    {{ product.height_image }}
                   </span>
                         </p>
                         <p class="space-x-2">
@@ -145,7 +135,7 @@
                     Карманы: 
                   </span>
                             <span class="font-light">
-                    2 
+                    {{ product.pocket }}
                   </span>
                         </p>
                     </div>
@@ -157,18 +147,13 @@
             </div>
             <div thumbsSlider="" class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide rounded-[20px]">
-                        <img src="{% static '/project/image/product ind (2).png' %}"
-                             class="object-center w-full h-full"/>
-                    </div>
-                    <div class="swiper-slide rounded-[20px]">
-                        <img src="{% static '/project/image/product ind (2).png' %}"
-                             class="object-center w-full h-full"/>
-                    </div>
-                    <div class="swiper-slide rounded-[20px]">
-                        <img src="{% static '/project/image/product ind (2).png' %}"
-                             class="object-center w-full h-full"/>
-                    </div>
+                    {% for img in product.images.all %}
+                        <div class="swiper-slide rounded-[20px]">
+                            <img src="{{ img.image.url }}"
+                                 class="object-center w-full h-full"/>
+                        </div>
+                    {% endfor %}
+
                 </div>
             </div>
         </div>
@@ -185,17 +170,17 @@
                         style="line-height: 24px !important"
                 >
                     <span class="">Наш адрес:</span>
-                    Юнусабадский район Проезд Олой бозори, Tashkent, Uzbekistan
+                    {{ contact.address }}
                 </p>
                 <div class="flex gap-6 w-fit max-xs:mx-auto">
                     <a
-                            href="https://www.instagram.com/abduganiev_technology/"
+                            href="{{ social.instagram }}"
                             class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
                     >
                         <i class="ri-instagram-line"></i>
                     </a>
                     <a
-                            href="https://www.telegram.com"
+                            href="{{ social.telegram }}"
                             class="flex items-center justify-center w-10 h-10 text-dark"
                     >
                         <svg
@@ -212,7 +197,7 @@
                         </svg>
                     </a>
                     <a
-                            href="hhtps://www.whatsapp.com"
+                            href="{{ social.whatsup }}"
                             class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
                     >
                         <i class="ri-whatsapp-fill"></i>
@@ -221,16 +206,16 @@
             </div>
             <div class="text-center">
                 <a
-                        href="tel:+998 90 977 18 82"
+                        href="{{ contact.phone_2 }}"
                         class="block text-sm lg:text-lg pb-[20px] font-montserrat font-medium"
                         style="line-height: 34px !important"
-                >+998 90 990 90 90</a
+                >{{ contact.phone_2 }}</a
                 >
                 <a
-                        href="mailto:info@aesyouform.uz"
+                        href="mailto:{{ contact.email }}"
                         class="block font-normal font-montserrat"
                         style="line-height: 24px !important"
-                >info@aesyouform.uz</a
+                >{{ contact.email }}</a
                 >
             </div>
             <div
@@ -243,7 +228,7 @@
                     <a href="https://abduganiev.uz" target="_blank" class="w-10 h-10">
                         <img
                                 class="object-contain w-full h-full"
-                                src="./project/image/abduganiev.png"
+                                src="{% static '/project/image/abduganiev.png' %}"
                                 alt="abduganiev technology"
                         />
                     </a>
