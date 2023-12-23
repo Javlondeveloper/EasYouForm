@@ -3,47 +3,57 @@ import uuid
 
 from ckeditor.fields import RichTextField
 from django.core.validators import FileExtensionValidator, URLValidator
-from django.db.models import (CASCADE, CharField, EmailField, FileField,
-                              ForeignKey, ImageField, IntegerField, Model,
-                              SlugField, URLField)
-from django.db.models.signals import pre_delete
-from django.dispatch import receiver
+from django.db.models import (
+    CASCADE,
+    CharField,
+    EmailField,
+    FileField,
+    ForeignKey,
+    ImageField,
+    IntegerField,
+    Model,
+    SlugField,
+    URLField,
+)
 from slugify import slugify
 
 
 class ImageDeletionMixin(Model):
-    class Meta:
-        abstract = True
-
     @staticmethod
     def _delete_file(path):
         if os.path.isfile(path):
             os.remove(path)
 
+    def delete_image(self, field_name):
+        try:
+            image_field = getattr(self, field_name)
+            if image_field:
+                self._delete_file(image_field.path)
+        except AttributeError:
+            pass
+
     def delete(self, *args, **kwargs):
         for field in self._meta.get_fields():
             if isinstance(field, ImageField):
-                image_field = getattr(self, field.name)
-                if image_field:
-                    self._delete_file(image_field.path)
+                self.delete_image(field.name)
         super().delete(*args, **kwargs)
 
     def save(self, *args, **kwargs):
-        if self.pk:
+        is_new_instance = not self.pk
+        orig = None
+        if not is_new_instance:
             orig = self.__class__.objects.get(pk=self.pk)
+        super().save(*args, **kwargs)
+        if not is_new_instance and orig:
             for field in self._meta.get_fields():
                 if isinstance(field, ImageField):
                     new_image_field = getattr(self, field.name)
                     old_image_field = getattr(orig, field.name)
                     if new_image_field != old_image_field:
-                        self._delete_file(old_image_field.path)
-        super().save(*args, **kwargs)
+                        self.delete_image(old_image_field.name)
 
-
-@receiver(pre_delete)
-def delete_image_files_on_instance_delete(sender, instance, **kwargs):
-    if isinstance(instance, ImageDeletionMixin):
-        instance.delete()
+    class Meta:
+        abstract = True
 
 
 def image_filename(instance, filename):
@@ -78,7 +88,7 @@ class IndexBanner(Model):
         verbose_name_plural = "Main Page Banner"
 
 
-class IndexAbout(Model):
+class IndexAbout(ImageDeletionMixin, Model):
     title = CharField(max_length=255)
     text = RichTextField()
     image = ImageField(max_length=255, upload_to=image_filename)
@@ -118,7 +128,7 @@ class Service(Model):
 
 
 # About Us
-class AboutUs(Model):
+class AboutUs(ImageDeletionMixin, Model):
     title = CharField(max_length=255, null=True)
     text_up = RichTextField(null=True)
     image = ImageField(max_length=255, upload_to=image_filename)
@@ -149,7 +159,7 @@ class Features(Model):
         verbose_name_plural = "Features"
 
 
-class Clients(Model):
+class Clients(ImageDeletionMixin, Model):
     image = ImageField(max_length=255, upload_to=image_filename)
 
     def __str__(self):
@@ -236,7 +246,7 @@ class Gallery(Model):
         verbose_name_plural = "Galleries"
 
 
-class Image(Model):
+class Image(ImageDeletionMixin, Model):
     image = ImageField(max_length=255, upload_to=image_filename)
     gallery = ForeignKey(Gallery, CASCADE, related_name="images")
 
@@ -261,7 +271,7 @@ class ProductPage(Model):
         verbose_name_plural = "Product Pages"
 
 
-class Category(Model):
+class Category(ImageDeletionMixin, Model):
     title = CharField(max_length=255, null=True, unique=True)
     image = ImageField(max_length=255, upload_to=image_filename)
     slug = SlugField(max_length=255, unique=True)
@@ -341,12 +351,12 @@ class Product(Model):
         verbose_name_plural = "Products"
 
 
-class ProductImages(Model):
+class ProductImages(ImageDeletionMixin, Model):
     image = ImageField(max_length=255, upload_to=image_filename)
     product = ForeignKey(Product, CASCADE, related_name="images")
 
     def __str__(self):
-        return f"{self.product.name}+ {self.image.url}"
+        return f"{self.product.name}image"
 
 
 class ProductSize(Model):

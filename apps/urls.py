@@ -1,8 +1,14 @@
 from django.urls import path
 
-from apps.views import (AboutUsView, CategoryProductView, ContactView,
-                        GalleryView, IndexView, ProductInnerView,
-                        ProductListView)
+from apps.views import (
+    AboutUsView,
+    CategoryProductView,
+    ContactView,
+    GalleryView,
+    IndexView,
+    ProductInnerView,
+    ProductListView,
+)
 
 urlpatterns = [
     path("", IndexView.as_view(), name="home"),

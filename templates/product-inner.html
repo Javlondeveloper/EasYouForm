@@ -141,7 +141,7 @@
                     </div>
                     <div class="flex flex-col md:space-y-4 md:flex-row">
                         <a href="#" class="btn-link" data-aos="fade-up" data-aos-delay="60">Заказать</a>
-                        <a href="#" class="btn-link" data-aos="fade-up" data-aos-delay="60">Вернуться в каталог</a>
+                        <a href="{% url 'products' product.category.slug %}" class="btn-link" data-aos="fade-up" data-aos-delay="60">Вернуться в каталог</a>
                     </div>
                 </div>
             </div>
