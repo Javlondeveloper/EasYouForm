@@ -3,18 +3,9 @@ import uuid
 
 from ckeditor.fields import RichTextField
 from django.core.validators import FileExtensionValidator, URLValidator
-from django.db.models import (
-    CASCADE,
-    CharField,
-    EmailField,
-    FileField,
-    ForeignKey,
-    ImageField,
-    IntegerField,
-    Model,
-    SlugField,
-    URLField,
-)
+from django.db.models import (CASCADE, CharField, EmailField, FileField,
+                              ForeignKey, ImageField, IntegerField, Model,
+                              SlugField, URLField)
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 from slugify import slugify
@@ -342,10 +333,20 @@ class Product(Model):
 
         super().save(force_insert, force_update, using, update_fields)
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
+
 
 class ProductImages(Model):
     image = ImageField(max_length=255, upload_to=image_filename)
     product = ForeignKey(Product, CASCADE, related_name="images")
+
+    def __str__(self):
+        return f"{self.product.name}+ {self.image.url}"
 
 
 class ProductSize(Model):

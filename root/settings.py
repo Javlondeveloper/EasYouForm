@@ -12,6 +12,7 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "modeltranslation",
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -89,16 +90,16 @@ def get_text(s):
     return s
 
 
-LANGUAGE_CODE = 'en-ru'
+LANGUAGE_CODE = "en-ru"
 
 gettext = get_text
 
 LANGUAGES = (
-    ('ru', gettext('Russian')),
-    ('en', gettext('English')),
+    ("ru", gettext("Russian")),
+    ("en", gettext("English")),
 )
 
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = "auth.User"
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)  # noqa
 print(LOCALE_PATHS)
@@ -125,4 +126,50 @@ CKEDITOR_CONFIGS = {
             ]
         ),
     },
+}
+
+JAZZMIN_SETTINGS = {
+    "site_title": "easYouform Admin",
+    "site_header": "easYouform",
+    "site_brand": "easYouform",
+    "site_logo": "/project/image/logo.png",
+    "login_logo": "/project/image/logo.png",
+    "login_logo_dark": "/project/image/logo.png",
+    "site_logo_classes": "img-square",
+    "site_icon": "/project/Image/hologorod-logo.png",
+    "welcome_sign": "Welcome to the easYouform Admin",
+    "copyright": "Abduganiev technology",
+    "search_model": [
+        "apps.Category",
+        "apps.Product",
+        "apps.Service",
+        "apps.AboutUs",
+    ],
+    "user_avatar": None,
+    "topmenu_links": [
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Support", "url": "https://abduganiev.uz/", "new_window": True},
+        {"model": "auth.User"},
+    ],
+    "usermenu_links": [
+        {"name": "Support", "url": "https://abduganiev.uz/", "new_window": True},
+    ],
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "hide_apps": [],
+    "hide_models": ["auth.Group", "auth.User"],
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+    },
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+    "related_modal_active": False,
+    "custom_css": None,
+    "custom_js": None,
+    "use_google_fonts_cdn": True,
+    "show_ui_builder": False,
+    "changeform_format": "horizontal_tabs",
+    "language_chooser": False,
 }

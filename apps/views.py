@@ -11,20 +11,9 @@ from django.utils import translation
 from django.views import View
 from django.views.generic import DetailView, ListView
 
-from apps.models import (
-    AboutUs,
-    Category,
-    Clients,
-    Contact,
-    Gallery,
-    IndexAbout,
-    IndexBanner,
-    IndexCategoryText,
-    Product,
-    ProductPage,
-    Service,
-    Socials,
-)
+from apps.models import (AboutUs, Category, Clients, Contact, Gallery,
+                         IndexAbout, IndexBanner, IndexCategoryText, Product,
+                         ProductPage, Service, Socials)
 
 
 def set_language(request, language):
@@ -97,8 +86,6 @@ class ContactView(View):
 class AboutUsView(View):
     template_name = "about.html"
 
-    # context_object_name = 'about'
-
     def get(self, request, *args, **kwargs):
         contact = Contact.objects.first()
         social = Socials.objects.first()
@@ -141,17 +128,15 @@ class CategoryProductView(View):
         clients = Clients.objects.all()
         product_page = ProductPage.objects.first()
 
-        # Fetch categories and products
         categories = Category.objects.all()
         selected_category = None
-        products = Product.objects.all()  # Initially, fetch all products
+        products = Product.objects.all()
 
-        # Check if a specific category is requested
         if "category_slug" in kwargs:
             selected_category = Category.objects.get(slug=kwargs["category_slug"])
             products = (
                 selected_category.products.all()
-            )  # Filter products by selected category
+            )
 
         context = {
             "contact": contact,

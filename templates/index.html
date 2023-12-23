@@ -32,7 +32,7 @@
                 id="navbar-container"
                 class="transition duration-700 rounded-[60px] container nav--bg duration-400 py-2.5 px-5 flex items-center justify-between"
         >
-            <a href="/" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
+            <a href="{% url 'home' %}" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
                 <img
                         src="{% static '/project/image/logo.png' %}"
                         alt="easYouform"
@@ -179,7 +179,7 @@
                     >
                         {{ index_about.text|safe|striptags }}
                     </p>
-                    <a href="#" class="btn-link" data-aos="fade-left" data-aos-delay="60">Подробнее</a
+                    <a href="{% url 'about' %}" class="btn-link" data-aos="fade-left" data-aos-delay="60">Подробнее</a
                     >
                 </div>
             </div>
