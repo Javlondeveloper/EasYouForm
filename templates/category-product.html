@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +22,11 @@
 <div class="relative overflow-x-hidden bg-white wrapper">
     <nav
             id="navbar"
-            class="absolute md:top-[10px] top-0 left-0 z-50 w-full mx-auto transition duration-700"
+            class=" fixed nav--bg--sidebar md:top-[10px] top-0 max-md:bg-light left-0 z-50 w-full mx-auto transition duration-700 "
     >
         <div
                 id="navbar-container"
-                class="transition duration-700 navbar-rounded container nav--bg duration-400 py-2.5 px-5 flex items-center justify-between"
+                class="transition duration-700  md:rounded-[60px] container nav--bg-sidebar duration-400 py-2.5 px-5 flex items-center justify-between"
         >
             <a href="{% url 'home' %}" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
                 <img
@@ -36,27 +36,32 @@
                 />
             </a>
             <ul
-                    class="text-dark md:bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center gap-5 w-full h-screen fixed left-[100%] top-[70px] opacity-0 md:opacity-100 -right-[0%] duration-500 bg-light gap-5 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
+                    class="text-dark md:bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center  w-full h-screen fixed  top-[70px] opacity-0 md:opacity-100 -right-[100%] duration-500 bg-light gap-3 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
             >
                 <li class="duration-500 hover:text-violet">
-                    <a href="{% url 'home' %}">Главная</a>
+                    <a href="{% url 'home' %}">{% trans 'Главная' %}</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="{% url 'about' %}">О нас</a>
+                    <a href="{% url 'about' %}">{% trans 'О нас' %}</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="{% url 'category-product' %}">Наша продукция</a>
+                    <a href="{% url 'category-product' %}">{% trans 'Наша продукция' %}</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="{% url 'gallery' %}">Галерея</a>
+                    <a href="{% url 'gallery' %}">{% trans 'Галерея' %}</a>
                 </li>
                 <li class="duration-500 hover:text-violet">
-                    <a href="{% url 'contact' %}">Контакты</a>
+                    <a href="{% url 'contact' %}">{% trans 'Контакты' %}</a>
+                </li>
+                <li class=" w-full  text-sm lg:text-lg text-grey md:hidden flex justify-center  gap-2 lg:gap-4 items-center">
+                    <a href="{% url 'set-language' 'ru' %}">Рус</a>
+                    <span class="text-red">|</span>
+                    <a href="{% url 'set-language' 'en' %}">Eng</a>
                 </li>
             </ul>
             <div class="flex gap-x-2">
                 <a
-                        href="{{ contact.phone_1 }}"
+                        href="tel:{{ contact.phone_1 }}"
                         class="flex items-center text-sm gap-2.5 text-white bg-violet md:bg-transparent md:text-violet rounded-xl md:text-violet px-2 py-1.5 lg:text-lg"
                 >
                     <i class="ri-phone-line text-xl mt-0.5 block md:hidden"></i>
@@ -70,8 +75,16 @@
                     <i class="ri-menu-line"></i>
                 </button>
             </div>
+            <div class="font-montserrat  font-normal text-sm lg:text-lg text-grey hidden md:flex gap-2 lg:gap-4 items-center">
+                <a href="{% url 'set-language' 'ru' %}">Рус</a>
+                <span class="text-red">|</span>
+                <a href="{% url 'set-language' 'en' %}">Eng</a>
+            </div>
         </div>
+
     </nav>
+
+
     <section class="pt-32 pb-20 md:pb-[110px] md:pt-[200px] relative">
         <div
                 class="container flex flex-col items-center space-y-[20px] md:space-y-[30px]"
@@ -116,7 +129,7 @@
                             <button
                                     class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
                             >
-                    <span class="text-xs font-normal md:text-sm font-montserrat">Подробнее</span>
+                    <span class="text-xs font-normal md:text-sm font-montserrat">{% trans 'Подробнее' %}</span>
                                 <img src="{% static '/project/image/arrow-left.svg' %}" alt="" class="hidden h-5 md:block w-7"/>
                             </button>
                         </div>
@@ -137,7 +150,7 @@
                         class="text-[13px] pb-[10px] font-montserrat font-medium"
                         style="line-height: 24px !important"
                 >
-                    <span class="">Наш адрес:</span>
+                    <span class="">{% trans 'Наш адрес:' %}</span>
                     {{ contact.address }}
                 </p>
                 <div class="flex gap-6 w-fit max-xs:mx-auto">
@@ -192,7 +205,7 @@
                 <div
                         class="flex items-center gap-[9px] pb-4 w-fit mx-auto md:mx-0 font-montserrat font-normal"
                 >
-                    <p class="text-dark opacity-70 text-[13px]">Сайт создан</p>
+                    <p class="text-dark opacity-70 text-[13px]">{% trans 'Сайт создан' %}</p>
                     <a href="https://abduganiev.uz" target="_blank" class="w-10 h-10">
                         <img
                                 class="object-contain w-full h-full"
@@ -205,7 +218,7 @@
                         class="text-[#767676] text-[13px]"
                         style="line-height: 24px !important"
                 >
-                    ©2023 easYOUform. All rights reserved.
+                    {% trans '©2023 easYOUform. All rights reserved.' %}
                 </p>
             </div>
         </div>

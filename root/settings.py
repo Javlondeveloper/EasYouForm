@@ -25,7 +25,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -79,37 +81,29 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
 
 USE_TZ = True
 
-
-def get_text(s):
-    return s
-
-
-LANGUAGE_CODE = "en-ru"
-
-gettext = get_text
-
+LANGUAGE_CODE = "ru"
+gettext = lambda s: s
 LANGUAGES = (
     ("ru", gettext("Russian")),
     ("en", gettext("English")),
 )
 
-AUTH_USER_MODEL = "auth.User"
-
-LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)  # noqa
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 print(LOCALE_PATHS)
-MODELTRANSLATION_DEFAULT_LANGUAGE = "ru"
 
+MODELTRANSLATION_DEFAULT_LANGUAGE = "ru"
+MODELTRANSLATION_LANGUAGES = ('en', 'ru')
 STATIC_URL = "static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")  # noqa
 
 MEDIA_URL = "media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # noqa
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CKEDITOR_UPLOAD_PATH = "uploads/"

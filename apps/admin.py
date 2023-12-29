@@ -3,13 +3,15 @@ from django.contrib.admin import ModelAdmin, StackedInline
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 from django.utils.text import Truncator
+from modeltranslation.admin import TranslationAdmin
 
 from apps.models import *
-from apps.utils import ImagePreviewAdminWidget, VideoPreviewAdminWidget
+from apps.utils import (AdminMediaMixin, ImagePreviewAdminWidget,
+                        VideoPreviewAdminWidget)
 
 
 @admin.register(IndexBanner)
-class IndexBannerAdmin(ModelAdmin):
+class IndexBannerAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = ("id", "title", "show_video")
     list_display_links = (
         "id",
@@ -31,7 +33,7 @@ class IndexBannerAdmin(ModelAdmin):
 
 
 @admin.register(IndexAbout)
-class IndexAboutAdmin(ModelAdmin):
+class IndexAboutAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = ("id", "title", "display_image")
     list_display_links = (
         "id",
@@ -54,23 +56,23 @@ class IndexAboutAdmin(ModelAdmin):
 
 
 @admin.register(IndexCategoryText)
-class IndexCategoryTextAdmin(ModelAdmin):
+class IndexCategoryTextAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = ("id", "title", "sub_title")
     list_display_links = ("id", "title")
 
 
 @admin.register(Service)
-class ServiceAdmin(ModelAdmin):
+class ServiceAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = ("id", "name")
     list_display_links = ("id", "name")
 
 
-class FeaturesInline(StackedInline):
+class FeaturesInline(AdminMediaMixin, StackedInline):
     model = Features
 
 
 @admin.register(AboutUs)
-class AboutUsAdmin(ModelAdmin):
+class AboutUsAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = ("id", "title", "display_image")
     list_display_links = (
         "id",
@@ -115,7 +117,7 @@ class ClientsAdmin(ModelAdmin):
 
 
 @admin.register(Contact)
-class ContactAdmin(ModelAdmin):
+class ContactAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = ("id", "working_hours", "phone_1", "phone_2")
     list_display_links = (
         "id",
@@ -137,7 +139,7 @@ class GalleryImages(StackedInline):
 
 
 @admin.register(Gallery)
-class GalleryAdmin(ModelAdmin):
+class GalleryAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = ("id", "title", "display_sub_title", "display_image")
     list_display_links = ("id", "title")
     inlines = (GalleryImages,)
@@ -159,7 +161,7 @@ class GalleryAdmin(ModelAdmin):
 
 
 @admin.register(ProductPage)
-class ProductPageAdmin(ModelAdmin):
+class ProductPageAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = (
         "id",
         "title",
@@ -172,7 +174,7 @@ class ProductPageAdmin(ModelAdmin):
 
 
 @admin.register(Category)
-class CategoryAdmin(ModelAdmin):
+class CategoryAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = ("id", "title", "display_image")
     list_display_links = ("id", "title")
     exclude = ("slug",)
@@ -205,9 +207,10 @@ class ProductSizesInline(StackedInline):
 
 
 @admin.register(Product)
-class ProductAdmin(ModelAdmin):
+class ProductAdmin(AdminMediaMixin, TranslationAdmin):
     list_display = ("id", "name", "price", "compound", "display_image")
     list_display_links = ("id", "name")
+    exclude = ("slug",)
     inlines = [ProductImagesInline, ProductSizesInline]
 
     def display_image(self, obj):

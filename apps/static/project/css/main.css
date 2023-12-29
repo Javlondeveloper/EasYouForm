@@ -1,2 +1,5 @@
 @import url(../css/fonts.css);
 @import url(../css/style.css);
+
+@import url(../plugin/remixicon/remixicon.css);
+@import url(../plugin/splide/splide.min.css);

@@ -10,6 +10,7 @@ from root.settings import MEDIA_ROOT, MEDIA_URL, STATIC_ROOT, STATIC_URL
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("apps.urls")),
+    path("i18n/", include("django.conf.urls.i18n")),
 ]
 urlpatterns += i18n_patterns(
     path("", include("apps.urls")),

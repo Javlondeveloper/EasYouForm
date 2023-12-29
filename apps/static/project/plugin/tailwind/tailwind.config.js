@@ -34,6 +34,10 @@ tailwind.config = {
       fontWeight:{
         lighter: '275'
       },
+      lineHeight: {
+        'lg': '1.5rem',
+        'base': '1.25rem',
+      },
     }
   },
 };

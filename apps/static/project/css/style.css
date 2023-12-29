@@ -1,5 +1,5 @@
 *{
-  line-height: normal !important;
+  line-height: normal;
   scroll-behavior: smooth;
 }
 
@@ -21,6 +21,24 @@
   font-size: 18px;
   transition: all ease .3s;
 }
+.btn-link-bg {
+  width: fit-content;
+  padding: 14px 30px;
+  background-color: #A368AA !important;
+  border: 1px solid #A368AA;
+  border-radius: 40px;
+  color: white;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 18px;
+  transition: all ease .3s;
+}
+.btn-link-bg:hover {
+  background-color: #fff;
+  border: 1px solid #363435;
+  color: #A368AA;
+  transition: all ease .3s;
+}
 
 .btn-link:hover {
   background: #A368AA;
@@ -38,6 +56,18 @@
 .nav--bg{
   background: rgba(253, 249, 246, 0.90);
   backdrop-filter: blur(5px);
+}
+.nav--bg-sidebar{
+  background: transparent;
+  backdrop-filter: none;
+}
+
+
+@media (min-width: 768px) {
+  .nav--bg-sidebar{
+    background: rgba(253, 249, 246, 0.90);
+    backdrop-filter: blur(5px);
+  }
 }
 
 
@@ -83,10 +113,13 @@
 
 @media (max-width: 600px) {
   .btn-link {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 9px 16px;
+    font-size: 14px;
   }
-  
+  .btn-link-bg {
+    padding: 9px 16px;
+    font-size: 14px;
+  }
  
 }
 
@@ -109,4 +142,25 @@ backdrop-filter: blur(6.5px);
   width: 100%;
   background-color: #F9F2F2;
   z-index:0;
+}
+
+.carusel-pagination {
+  position: static !important;
+}
+
+.modal-wrapper {
+  background: rgba(217, 217, 217, 0.20);
+backdrop-filter: blur(7px);
+}
+
+.text-base {
+  line-height: 1.25rem;
+}
+
+.md:text-lg {
+  line-height: 1.5rem;
+}
+
+.selected {
+  background-color: #A368AA;
 }

@@ -3,18 +3,9 @@ import uuid
 
 from ckeditor.fields import RichTextField
 from django.core.validators import FileExtensionValidator, URLValidator
-from django.db.models import (
-    CASCADE,
-    CharField,
-    EmailField,
-    FileField,
-    ForeignKey,
-    ImageField,
-    IntegerField,
-    Model,
-    SlugField,
-    URLField,
-)
+from django.db.models import (CASCADE, CharField, EmailField, FileField,
+                              ForeignKey, ImageField, IntegerField, Model,
+                              SlugField, URLField)
 from slugify import slugify
 
 
@@ -139,7 +130,7 @@ class AboutUs(ImageDeletionMixin, Model):
     monthly_production_output = IntegerField(null=True)
 
     def __int__(self):
-        return int(self.experience)
+        return self.title
 
     class Meta:
         verbose_name = "About Us"
@@ -148,6 +139,7 @@ class AboutUs(ImageDeletionMixin, Model):
 
 class Features(Model):
     title = CharField(max_length=255, null=True)
+    icon = CharField(max_length=100, null=True, blank=True)
     text = RichTextField()
     about = ForeignKey(AboutUs, CASCADE, related_name="features")
 
@@ -277,7 +269,7 @@ class Category(ImageDeletionMixin, Model):
     slug = SlugField(max_length=255, unique=True)
 
     def save(
-        self, force_insert=False, force_update=False, using=None, update_fields=None
+            self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
         if not self.pk:  # noqa
             self.slug = slugify(self.title)
@@ -321,7 +313,7 @@ class Product(Model):
     slug = SlugField(max_length=255, unique=True)
 
     def save(
-        self, force_insert=False, force_update=False, using=None, update_fields=None
+            self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
         if not self.pk:  # noqa
             self.slug = slugify(self.name)
@@ -343,8 +335,8 @@ class Product(Model):
 
         super().save(force_insert, force_update, using, update_fields)
 
-    def __str__(self):
-        return self.name
+    def __int__(self):
+        return self.pk
 
     class Meta:
         verbose_name = "Product"
@@ -360,5 +352,5 @@ class ProductImages(ImageDeletionMixin, Model):
 
 
 class ProductSize(Model):
-    size = IntegerField(default=1)
+    size = CharField(max_length=50)
     product = ForeignKey(Product, CASCADE, related_name="sizes")
