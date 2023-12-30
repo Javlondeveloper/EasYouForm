@@ -5,6 +5,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>easYouform</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'project/image/eas_icon.png' %}">
     <link rel="stylesheet" href="{% static '/project/plugin/aos/aos.css' %}"/>
     <link rel="stylesheet" href="{% static '/project/css/main.css' %}"/>
     <link
@@ -101,7 +102,7 @@
                         data-aos-delay="100"
                         class="text-sm font-light font-montserrat-alternates-light sm:text-base lg:text-lg font-montserrat"
                 >
-                    {{ product_page.sub_title }}
+                    {{ product_page.text|striptags|safe }}
                 </p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]">

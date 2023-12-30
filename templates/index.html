@@ -5,6 +5,8 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>easYouform</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'project/image/eas_icon.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'project/image/eas_icon.png' %}">
     <link rel="stylesheet" href="{% static '/project/plugin/aos/aos.css' %}"/>
     <link rel="stylesheet" href="{% static '/project/css/main.css' %}"/>
     <link
@@ -135,9 +137,11 @@
     <section
             id="mySlider"
             class="splide md:py-14 sm:py-10 py-7"
-            aria-label="Splide Basic HTML Example">
+            aria-label="Splide Basic HTML Example"
+    >
         <div class="splide__track">
-            <ul class="text-sm font-light splide__list font-montserrat text-dark sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl whitespace-nowrap">
+            <ul
+                    class="text-sm font-light splide__list font-montserrat text-dark sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl whitespace-nowrap">
                 {% for service in services %}
                     <li class="flex items-center gap-10 splide__slide">
                         <p>{{ service.name }}</p>
@@ -158,6 +162,7 @@
                         </svg>
                     </li>
                 {% endfor %}
+
 
             </ul>
         </div>
@@ -190,7 +195,8 @@
                     >
                         {{ index_about.text|safe|striptags }}
                     </p>
-                    <a href="{% url 'about' %}" class="btn-link" data-aos="fade-left" data-aos-delay="60">{% trans 'Подробнее' %}</a
+                    <a href="{% url 'about' %}" class="btn-link" data-aos="fade-left"
+                       data-aos-delay="60">{% trans 'Подробнее' %}</a
                     >
                 </div>
             </div>
@@ -440,7 +446,7 @@
         </div>
     </footer>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="{% static '/project/plugin/splide/splide.min.js' %}"></script>
 <script src="{% static '/project/plugin/swiper/swiper-bundle.min.js' %}"></script>
 <script src="{% static '/project/plugin/purecounter/purecounter_vanilla.js' %}"></script>
 <script src="{% static '/project/js/script.js' %}"></script>
@@ -448,6 +454,23 @@
 <script>
     AOS.init();
 </script>
+<script>
+    const mySlider = new Splide('#mySlider', {
+        perMove: 3,
+        perPage: 3,
+        gap: '40px',
+        arrows: false,
+        type: 'loop',
+        autoplay: true,
+        interval: 0,
+        speed: 200000,
+        // focus    : 'center',
+        autoWidth: true,
+    })
+
+    mySlider.mount()
+</script>
+
 </body>
 </html>
 l
