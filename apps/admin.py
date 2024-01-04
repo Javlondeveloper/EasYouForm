@@ -6,12 +6,11 @@ from django.utils.text import Truncator
 from modeltranslation.admin import TranslationAdmin
 
 from apps.models import *
-from apps.utils import (AdminMediaMixin, ImagePreviewAdminWidget,
-                        VideoPreviewAdminWidget)
+from apps.utils import ImagePreviewAdminWidget, VideoPreviewAdminWidget
 
 
 @admin.register(IndexBanner)
-class IndexBannerAdmin(AdminMediaMixin, TranslationAdmin):
+class IndexBannerAdmin(TranslationAdmin):
     list_display = ("id", "title", "show_video")
     list_display_links = (
         "id",
@@ -33,7 +32,7 @@ class IndexBannerAdmin(AdminMediaMixin, TranslationAdmin):
 
 
 @admin.register(IndexAbout)
-class IndexAboutAdmin(AdminMediaMixin, TranslationAdmin):
+class IndexAboutAdmin(TranslationAdmin):
     list_display = ("id", "title", "display_image")
     list_display_links = (
         "id",
@@ -56,23 +55,23 @@ class IndexAboutAdmin(AdminMediaMixin, TranslationAdmin):
 
 
 @admin.register(IndexCategoryText)
-class IndexCategoryTextAdmin(AdminMediaMixin, TranslationAdmin):
+class IndexCategoryTextAdmin(TranslationAdmin):
     list_display = ("id", "title", "sub_title")
     list_display_links = ("id", "title")
 
 
 @admin.register(Service)
-class ServiceAdmin(AdminMediaMixin, TranslationAdmin):
+class ServiceAdmin(TranslationAdmin):
     list_display = ("id", "name")
     list_display_links = ("id", "name")
 
 
-class FeaturesInline(AdminMediaMixin, StackedInline):
+class FeaturesInline(StackedInline):
     model = Features
 
 
 @admin.register(AboutUs)
-class AboutUsAdmin(AdminMediaMixin, TranslationAdmin):
+class AboutUsAdmin(TranslationAdmin):
     list_display = ("id", "title", "display_image")
     list_display_links = (
         "id",
@@ -117,7 +116,7 @@ class ClientsAdmin(ModelAdmin):
 
 
 @admin.register(Contact)
-class ContactAdmin(AdminMediaMixin, TranslationAdmin):
+class ContactAdmin(TranslationAdmin):
     list_display = ("id", "working_hours", "phone_1", "phone_2")
     list_display_links = (
         "id",
@@ -139,7 +138,7 @@ class GalleryImages(StackedInline):
 
 
 @admin.register(Gallery)
-class GalleryAdmin(AdminMediaMixin, TranslationAdmin):
+class GalleryAdmin(TranslationAdmin):
     list_display = ("id", "title", "display_sub_title", "display_image")
     list_display_links = ("id", "title")
     inlines = (GalleryImages,)
@@ -161,7 +160,7 @@ class GalleryAdmin(AdminMediaMixin, TranslationAdmin):
 
 
 @admin.register(ProductPage)
-class ProductPageAdmin(AdminMediaMixin, TranslationAdmin):
+class ProductPageAdmin(TranslationAdmin):
     list_display = (
         "id",
         "title",
@@ -207,7 +206,7 @@ class ProductSizesInline(StackedInline):
 
 
 @admin.register(Product)
-class ProductAdmin(AdminMediaMixin, TranslationAdmin):
+class ProductAdmin(TranslationAdmin):
     list_display = ("id", "name", "price", "compound", "display_image")
     list_display_links = ("id", "name")
     exclude = ("slug",)
