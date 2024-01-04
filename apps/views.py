@@ -12,9 +12,20 @@ from django.utils import translation
 from django.views import View
 from django.views.generic import DetailView, ListView
 
-from apps.models import (AboutUs, Category, Clients, Contact, Gallery,
-                         IndexAbout, IndexBanner, IndexCategoryText, Product,
-                         ProductPage, Service, Socials)
+from apps.models import (
+    AboutUs,
+    Category,
+    Clients,
+    Contact,
+    Gallery,
+    IndexAbout,
+    IndexBanner,
+    IndexCategoryText,
+    Product,
+    ProductPage,
+    Service,
+    Socials,
+)
 
 
 def set_language(request, language):
