@@ -1,85 +1,88 @@
-*{
-  line-height: normal;
-  scroll-behavior: smooth;
+* {
+    line-height: normal;
+    scroll-behavior: smooth;
 }
 
 .rewards {
-  background-image: url(../image/rewards.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+    background-image: url(../image/rewards.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .btn-link {
-  width: fit-content;
-  padding: 14px 30px;
-  border: 1px solid #363435;
-  border-radius: 40px;
-  color: #363435;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  font-size: 18px;
-  transition: all .5s;
+    width: fit-content;
+    padding: 14px 30px;
+    border: 1px solid #363435;
+    border-radius: 40px;
+    color: #363435;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 18px;
+    transition: all .5s;
 }
+
 .btn-link-bg {
-  width: fit-content;
-  padding: 14px 30px;
-  background-color: #A368AA !important;
-  border: 1px solid #A368AA;
-  border-radius: 40px;
-  color: white;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  font-size: 18px;
-  transition: all ease .3s;
+    width: fit-content;
+    padding: 14px 30px;
+    background-color: #A368AA !important;
+    border: 1px solid #A368AA;
+    border-radius: 40px;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 18px;
+    transition: all ease .3s;
 }
+
 .btn-link-bg:hover {
-  background-color: #fff;
-  border: 1px solid #363435;
-  color: #A368AA;
-  transition: all ease .3s;
+    background-color: #fff;
+    border: 1px solid #363435;
+    color: #A368AA;
+    transition: all ease .3s;
 }
 
 .btn-link:hover {
-  background: #A368AA;
-  color: white;
-  border: 1px solid #A368AA;
+    background: #A368AA;
+    color: white;
+    border: 1px solid #A368AA;
 }
 
 /*navbar*/
 
 .swiper-pagination span {
-  background: #A368AA;
+    background: #A368AA;
 }
 
 
-.nav--bg{
-  background: rgba(253, 249, 246, 0.90);
-  backdrop-filter: blur(5px);
+.nav--bg {
+    background: rgba(253, 249, 246, 0.90);
+    backdrop-filter: blur(5px);
 }
-.nav--bg-sidebar{
-  background: transparent;
-  backdrop-filter: none;
+
+.nav--bg-sidebar {
+    background: transparent;
+    backdrop-filter: none;
 }
 
 
 @media (min-width: 768px) {
-  .nav--bg-sidebar{
-    background: rgba(253, 249, 246, 0.90);
-    backdrop-filter: blur(5px);
-  }
+    .nav--bg-sidebar {
+        background: rgba(253, 249, 246, 0.90);
+        backdrop-filter: blur(5px);
+    }
 }
 
 
 .marquee-container {
-  overflow: hidden;
-  white-space: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .marquee-content {
-  display: inline-block;
-  animation: marqueeAnimation 10s linear infinite;
+    display: inline-block;
+    animation: marqueeAnimation 10s linear infinite;
 }
 
 
@@ -94,74 +97,85 @@
 
 
 /* Other browsers */
-*::-webkit-scrollbar{
-  width: 16px;
+*::-webkit-scrollbar {
+    width: 16px;
 }
 
-*::-webkit-scrollbar-track{
-  background: #FDF9F6;
+*::-webkit-scrollbar-track {
+    background: #FDF9F6;
 }
 
-*::-webkit-scrollbar-thumb{
-  background-color: #A368AA;
-  border-radius: 0px;
-  border: 3px solid #FDF9F6;
-  border-radius: 7px;
+*::-webkit-scrollbar-thumb {
+    background-color: #A368AA;
+    border-radius: 0px;
+    border: 3px solid #FDF9F6;
+    border-radius: 7px;
 }
-
-
 
 
 @media (max-width: 600px) {
-  .btn-link {
-    padding: 9px 16px;
-    font-size: 14px;
-  }
-  .btn-link-bg {
-    padding: 9px 16px;
-    font-size: 14px;
-  }
- 
+    .btn-link {
+        padding: 9px 16px;
+        font-size: 14px;
+    }
+
+    .btn-link-bg {
+        padding: 9px 16px;
+        font-size: 14px;
+    }
+
 }
 
 .product-card {
-background: linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%);
-backdrop-filter: blur(6.5px);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%);
+    backdrop-filter: blur(6.5px);
 }
 
 #navbar {
-  transition: all 0.3s ease; /* Adjust the duration as needed */
+    transition: all 0.3s ease; /* Adjust the duration as needed */
 }
 
 
 .about::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 50%;
-  width: 100%;
-  background-color: #F9F2F2;
-  z-index:0;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background-color: #F9F2F2;
+    z-index: 0;
 }
 
 .carusel-pagination {
-  position: static !important;
+    position: static !important;
 }
 
 .modal-wrapper {
-  background: rgba(217, 217, 217, 0.20);
-backdrop-filter: blur(7px);
+    background: rgba(217, 217, 217, 0.20);
+    backdrop-filter: blur(7px);
 }
 
 .text-base {
-  line-height: 1.25rem;
+    line-height: 1.25rem;
 }
 
 .md:text-lg {
-  line-height: 1.5rem;
+    line-height: 1.5rem;
 }
 
 .selected {
-  background-color: #A368AA;
+    background-color: #A368AA;
+}
+
+.size-btn.selected-size {
+    background-color: #A368AA;
+    color: #ffffff;
+    border-color: #A368AA;
+}
+
+.size-btn:hover {
+    background-color: #A368AA;
+    color: #ffffff;
+    border-color: #A368AA;
 }
