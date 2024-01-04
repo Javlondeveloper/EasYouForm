@@ -87,7 +87,8 @@
     </nav>
 
 
-    <section class="pt-32 pb-20 md:pb-[110px] md:pt-[200px] relative">
+    <main class="min-h-screen">
+        <section class="pt-32 pb-20 md:pb-[110px] md:pt-[200px] relative">
         <div class="container">
             <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
                 <div class="font-montserrat space-y-[30px] text-dark space-y-3">
@@ -101,7 +102,7 @@
                         <li>
                             <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="10">
                     <span class="text-violet">
-                      {% trans 'Режим работы:' %} 
+                      {% trans 'Режим работы:' %}
                     </span>
                                 <span>{{ contact.working_hours }}</span>
                             </p>
@@ -109,7 +110,7 @@
                         <li>
                             <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="20">
                     <span class="text-violet">
-                      {% trans 'Телефон:' %} 
+                      {% trans 'Телефон:' %}
                     </span>
                                 <span>{{ contact.phone_2 }} </span>
                             </p>
@@ -125,7 +126,7 @@
                         <li>
                             <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="40">
                     <span class="text-violet">
-                      {% trans 'Наш адрес:' %} 
+                      {% trans 'Наш адрес:' %}
                     </span>
                                 <span>{{ contact.address }}</span>
                             </p>
@@ -176,6 +177,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="py-8 bg-light">
         <div

@@ -89,7 +89,8 @@
         </div>
 
     </nav>
-    <header class="relative w-full h-screen text-white">
+    <main class="min-h-screen">
+        <header class="relative w-full h-screen text-white">
         <video
                 class="object-cover w-full h-full"
                 preload="auto"
@@ -195,9 +196,13 @@
                     >
                         {{ index_about.text|safe|striptags }}
                     </p>
-                    <a href="{% url 'about' %}" class="btn-link" data-aos="fade-left"
-                       data-aos-delay="60">{% trans 'Подробнее' %}</a
+                    <div data-aos="fade-left"
+                       data-aos-delay="60">
+                        
+                    <a href="{% url 'about' %}" class="btn-link" >{% trans 'Подробнее' %}</a
                     >
+                    </div>
+                        
                 </div>
             </div>
         </div>
@@ -262,9 +267,12 @@
                 {% endfor %}
 
             </div>
-            <a href="{% url 'category-product' %}" class="btn-link" data-aos="fade-up" data-aos-delay="60"
+        <div data-aos="fade-up" data-aos-delay="60">
+            <a href="{% url 'category-product' %}" class="btn-link" 
             >{% trans 'Посмотреть все' %}</a
             >
+        </div>
+            
         </div>
     </section>
     <section class="rewards py-[40px] md:py-[50px]">
@@ -341,7 +349,7 @@
                     class="mb-5 text-2xl font-normal text-center text-black md:text-3xl lg:text-4xl xl:text-5xl md:mb-8 font-czizh"
                     data-aos="zoom-up"
             >
-                {% trans 'Наши крупнейшие клиенты' %}
+                {% trans 'Наши клиенты' %}
             </h2>
             <div class="w-full">
                 <div class="swiper aboutSwiper">
@@ -363,6 +371,7 @@
             </div>
         </div>
     </section>
+    </main>
     <footer class="py-8 bg-light">
         <div
                 class="container grid grid-cols-1 gap-5 xs:grid-cols-2 lg:grid-cols-3 text-dark font-montserrat-alternates xs:gap-10"
@@ -473,4 +482,3 @@
 
 </body>
 </html>
-l

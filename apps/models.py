@@ -269,7 +269,7 @@ class Category(ImageDeletionMixin, Model):
     slug = SlugField(max_length=255, unique=True)
 
     def save(
-            self, force_insert=False, force_update=False, using=None, update_fields=None
+        self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
         if not self.pk:  # noqa
             self.slug = slugify(self.title)
@@ -313,7 +313,7 @@ class Product(Model):
     slug = SlugField(max_length=255, unique=True)
 
     def save(
-            self, force_insert=False, force_update=False, using=None, update_fields=None
+        self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
         if not self.pk:  # noqa
             self.slug = slugify(self.name)

@@ -86,7 +86,8 @@
     </nav>
 
 
-    <section class="py-[110px]">
+    <main class="min-h-screen">
+        <section class="py-[110px]">
         <div class="container">
             <div class="flex flex-col items-center gap-y-4">
                 <h3
@@ -125,6 +126,7 @@
             </div>
         </div>
     </section>
+    </main>
     <footer class="py-8 bg-light">
         <div
                 class="container grid grid-cols-1 gap-5 xs:grid-cols-2 lg:grid-cols-3 text-dark font-montserrat-alternates xs:gap-10"
@@ -221,6 +223,9 @@
         spaceBetween: 40,
         centeredSlides: true,
         loop: true,
+        autoplay:{
+          duration:4000  
+        },
         breakpoints: {
             1280: {
                 spaceBetween: 100,

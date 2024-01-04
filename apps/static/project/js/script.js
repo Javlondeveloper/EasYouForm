@@ -60,6 +60,8 @@ let swiperAbout = new Swiper(".aboutSwiper", {
 });
 
 
+
+
 // function startMarquee() {
 //     const container = document.getElementById("marqueeContainer");
 //     const content = document.getElementById("marqueeContent");

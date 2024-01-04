@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .btn-link {
@@ -19,7 +20,7 @@
   font-family: 'Montserrat';
   font-weight: 400;
   font-size: 18px;
-  transition: all ease .3s;
+  transition: all .5s;
 }
 .btn-link-bg {
   width: fit-content;

@@ -98,7 +98,7 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 print(LOCALE_PATHS)
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = "ru"
-MODELTRANSLATION_LANGUAGES = ('en', 'ru')
+MODELTRANSLATION_LANGUAGES = ("en", "ru")
 STATIC_URL = "static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")  # noqa
 

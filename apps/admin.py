@@ -174,7 +174,7 @@ class ProductPageAdmin(AdminMediaMixin, TranslationAdmin):
 
 
 @admin.register(Category)
-class CategoryAdmin(AdminMediaMixin, TranslationAdmin):
+class CategoryAdmin(TranslationAdmin):
     list_display = ("id", "title", "display_image")
     list_display_links = ("id", "title")
     exclude = ("slug",)
