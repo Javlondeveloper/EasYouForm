@@ -274,12 +274,15 @@ class Category(ImageDeletionMixin, Model):
         if not self.pk:  # noqa
             self.slug = slugify(self.title)
         else:
-            old_instance = Product.objects.get(pk=self.pk)
-            if self.title != old_instance.name:
+            if self.products.exists():
+                old_instance = self.products.first()
+                if self.title != old_instance.name:
+                    self.slug = slugify(self.title)
+            else:
                 self.slug = slugify(self.title)
 
-        while Product.objects.filter(slug=self.slug).exclude(pk=self.pk).exists():
-            if "-" in self.slug:
+        while Category.objects.filter(slug=self.slug).exclude(pk=self.pk).exists():
+            if "-" in self.slug:  # noqa
                 parts = self.slug.split("-")
                 if parts[-1].isdigit():
                     count = int(parts[-1])
