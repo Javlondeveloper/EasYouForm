@@ -2,30 +2,17 @@ from urllib.parse import urlparse
 
 import requests
 from django.conf import settings
-from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import NoReverseMatch
 from django.urls.base import resolve, reverse
 from django.urls.exceptions import Resolver404
 from django.utils import translation
 from django.views import View
 from django.views.generic import DetailView, ListView
 
-from apps.models import (
-    AboutUs,
-    Category,
-    Clients,
-    Contact,
-    Gallery,
-    IndexAbout,
-    IndexBanner,
-    IndexCategoryText,
-    Product,
-    ProductPage,
-    Service,
-    Socials,
-)
+from apps.models import (AboutUs, Category, Clients, Contact, Gallery,
+                         IndexAbout, IndexBanner, IndexCategoryText, Product,
+                         ProductPage, Service, Socials)
 
 
 def set_language(request, language):

@@ -3,18 +3,9 @@ import uuid
 
 from ckeditor.fields import RichTextField
 from django.core.validators import FileExtensionValidator, URLValidator
-from django.db.models import (
-    CASCADE,
-    CharField,
-    EmailField,
-    FileField,
-    ForeignKey,
-    ImageField,
-    IntegerField,
-    Model,
-    SlugField,
-    URLField,
-)
+from django.db.models import (CASCADE, CharField, EmailField, FileField,
+                              ForeignKey, ImageField, IntegerField, Model,
+                              SlugField, URLField)
 from slugify import slugify
 
 
@@ -278,7 +269,7 @@ class Category(ImageDeletionMixin, Model):
     slug = SlugField(max_length=255, unique=True)
 
     def save(
-            self, force_insert=False, force_update=False, using=None, update_fields=None
+        self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
         if not self.pk:  # noqa
             self.slug = slugify(self.title)
@@ -312,7 +303,7 @@ class Product(Model):
     name = CharField(max_length=255, unique=True)
     price = IntegerField(default=0)
     compound = CharField(max_length=300)
-    size = CharField(max_length=200)
+    size = CharField(max_length=200, null=True, blank=True)
     colour = CharField(max_length=40)
     height_image = IntegerField()
     pockets = IntegerField(default=2)
@@ -322,7 +313,7 @@ class Product(Model):
     slug = SlugField(max_length=255, unique=True)
 
     def save(
-            self, force_insert=False, force_update=False, using=None, update_fields=None
+        self, force_insert=False, force_update=False, using=None, update_fields=None
     ):
         if not self.pk:  # Check if it's a new instance (not saved before)
             self.slug = slugify(self.name)
@@ -332,11 +323,13 @@ class Product(Model):
                 if self.name != old_instance.name:
                     self.slug = slugify(self.name)
             except (
-                    Product.DoesNotExist
+                Product.DoesNotExist
             ):  # Handle the case when the object doesn't exist
                 pass
 
-        while Product.objects.filter(slug=self.slug).exclude(pk=self.pk).exists():  # noqa
+        while (
+            Product.objects.filter(slug=self.slug).exclude(pk=self.pk).exists()
+        ):  # noqa
             if "-" in self.slug:
                 parts = self.slug.split("-")
                 if parts[-1].isdigit():
@@ -366,5 +359,5 @@ class ProductImages(ImageDeletionMixin, Model):
 
 
 class ProductSize(Model):
-    size = CharField(max_length=50)
+    size = CharField(max_length=50, null=True, blank=True)
     product = ForeignKey(Product, CASCADE, related_name="sizes")
