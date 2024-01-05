@@ -126,11 +126,11 @@ JAZZMIN_SETTINGS = {
     "site_title": "easYouform Admin",
     "site_header": "easYouform",
     "site_brand": "easYouform",
-    "site_logo": "/project/image/logo.png",
+    "site_logo": "/project/image/eas_icon.png",
     "login_logo": "/project/image/logo.png",
     "login_logo_dark": "/project/image/logo.png",
     "site_logo_classes": "img-square",
-    "site_icon": "/project/Image/hologorod-logo.png",
+    "site_icon": "/project/image/eas_icon.png",
     "welcome_sign": "Welcome to the easYouform Admin",
     "copyright": "Abduganiev technology",
     "search_model": [
