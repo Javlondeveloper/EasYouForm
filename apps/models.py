@@ -139,7 +139,12 @@ class AboutUs(ImageDeletionMixin, Model):
 
 class Features(Model):
     title = CharField(max_length=255, null=True)
-    icon = CharField(max_length=100, null=True, blank=True)
+    icon = CharField(
+        max_length=100,
+        null=True,
+        blank=True,
+        help_text="добавьте сюда только remix icons here https://remixicon.com/",
+    )
     text = RichTextField()
     about = ForeignKey(AboutUs, CASCADE, related_name="features")
 

@@ -68,6 +68,7 @@ class ServiceAdmin(TranslationAdmin):
 
 class FeaturesInline(StackedInline):
     model = Features
+    exclude = ("title", "text")
 
 
 @admin.register(AboutUs)
@@ -128,7 +129,7 @@ class ContactAdmin(TranslationAdmin):
 class SocialsAdmin(ModelAdmin):
     list_display = ("id", "instagram", "whatsup", "telegram")
     list_display_links = ("id", "instagram")
-    exclude = ('youtube','linkedin')
+    exclude = ("youtube", "linkedin")
 
 
 class GalleryImages(StackedInline):
