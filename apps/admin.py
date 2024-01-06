@@ -126,8 +126,9 @@ class ContactAdmin(TranslationAdmin):
 
 @admin.register(Socials)
 class SocialsAdmin(ModelAdmin):
-    list_display = ("id", "instagram", "whatsup", "youtube")
+    list_display = ("id", "instagram", "whatsup", "telegram")
     list_display_links = ("id", "instagram")
+    exclude = ('youtube','linkedin')
 
 
 class GalleryImages(StackedInline):
