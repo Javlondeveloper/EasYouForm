@@ -4,6 +4,40 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {#    google#}
+
+    <meta name="description" content="easYOUform Perfection in the details">
+    <meta name="keywords"
+          content="easYOUform, Perfection in the details, Textile, textiles, fabrics, clothing, designs, patterns, textile store">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+
+    {#    for social media#}
+
+    <meta property="og:title" content="Perfection in the details">
+    <meta property="og:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourwebsite.com/your-page-url">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+    {#    twitter cards#}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@easYOUform">
+    <meta name="twitter:title" content="easYOUform">
+    <meta name="twitter:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta name="twitter:image" content="https://easyouform.uz/static/project/image/logo.png">
+    {#    telegram#}
+
+    <meta property="og:title" content="Perfection in the details">
+    <meta property="og:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+
     <title>easYouform</title>
     <link rel="icon" type="image/x-icon" href="{% static 'project/image/eas_icon.png' %}">
     <link rel="stylesheet" href="{% static '/project/plugin/aos/aos.css' %}"/>
@@ -89,94 +123,94 @@
 
     <main class="min-h-screen">
         <section class="pt-32 pb-20 md:pb-[110px] md:pt-[200px] relative">
-        <div class="container">
-            <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
-                <div class="font-montserrat space-y-[30px] text-dark space-y-3">
-                    <h3
-                            class="text-2xl font-normal text-center md:text-3xl lg:text-4xl xl:text-5xl md:text-start font-czizh"
-                            data-aos="fade-up"
-                    >
-                        {% trans 'Свяжитесь с нами!' %}
-                    </h3>
-                    <ul class="space-y-5 text-sm md:text-lg">
-                        <li>
-                            <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="10">
+            <div class="container">
+                <div class="grid items-center grid-cols-1 gap-10 md:grid-cols-2">
+                    <div class="font-montserrat space-y-[30px] text-dark space-y-3">
+                        <h3
+                                class="text-2xl font-normal text-center md:text-3xl lg:text-4xl xl:text-5xl md:text-start font-czizh"
+                                data-aos="fade-up"
+                        >
+                            {% trans 'Свяжитесь с нами!' %}
+                        </h3>
+                        <ul class="space-y-5 text-sm md:text-lg">
+                            <li>
+                                <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="10">
                     <span class="text-violet">
                       {% trans 'Режим работы:' %}
                     </span>
-                                <span>{{ contact.working_hours }}</span>
-                            </p>
-                        </li>
-                        <li>
-                            <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="20">
+                                    <span>{{ contact.working_hours }}</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="20">
                     <span class="text-violet">
                       {% trans 'Телефон:' %}
                     </span>
-                                <span>{{ contact.phone_2 }} </span>
-                            </p>
-                        </li>
-                        <li>
-                            <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="30">
+                                    <span>{{ contact.phone_2 }} </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="30">
                     <span class="text-violet">
                       {% trans 'Электронная почта:' %}
                     </span>
-                                <span>{{ contact.email }}</span>
-                            </p>
-                        </li>
-                        <li>
-                            <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="40">
+                                    <span>{{ contact.email }}</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="space-x-4 md:space-x-5" data-aos="fade-right" data-aos-delay="40">
                     <span class="text-violet">
                       {% trans 'Наш адрес:' %}
                     </span>
-                                <span>{{ contact.address }}</span>
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="flex gap-6 w-fit max-xs:mx-auto">
-                        <a
-                                data-aos="zoom-in"
-                                href="{{ social.instagram }}"
-                                class="flex items-center justify-center text-2xl text-dark"
-                        >
-                            <i class="ri-instagram-line"></i>
-                        </a>
-                        <a
-                                data-aos="zoom-in"
-                                data-aos-delay="10"
-                                href="{{ social.telegram }}"
-                                class="flex items-center justify-center text-2xl text-dark"
-                        >
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="40"
-                                    height="40"
-                                    viewBox="0 0 40 40"
-                                    fill="none"
+                                    <span>{{ contact.address }}</span>
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="flex gap-6 w-fit max-xs:mx-auto">
+                            <a
+                                    data-aos="zoom-in"
+                                    href="{{ social.instagram }}"
+                                    class="flex items-center justify-center text-2xl text-dark"
                             >
-                                <path
-                                        d="M28 12.6022L24.9946 28.2923C24.9946 28.2923 24.5741 29.3801 23.4189 28.8584L16.4846 23.3526L16.4524 23.3364C17.3891 22.4654 24.6524 15.7027 24.9698 15.3961C25.4613 14.9214 25.1562 14.6387 24.5856 14.9974L13.8568 22.053L9.71764 20.6108C9.71764 20.6108 9.06626 20.3708 9.00359 19.8491C8.9401 19.3265 9.73908 19.0439 9.73908 19.0439L26.6131 12.1889C26.6131 12.1889 28 11.5579 28 12.6022Z"
-                                        fill="#363435"
-                                />
-                            </svg>
-                        </a>
-                        <a
-                                data-aos="zoom-in"
-                                data-aos-delay="20"
-                                href="{{ social.whatsup }}"
-                                class="flex items-center justify-center text-2xl text-dark"
-                        >
-                            <i class="ri-whatsapp-fill"></i>
-                        </a>
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a
+                                    data-aos="zoom-in"
+                                    data-aos-delay="10"
+                                    href="{{ social.telegram }}"
+                                    class="flex items-center justify-center text-2xl text-dark"
+                            >
+                                <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="40"
+                                        height="40"
+                                        viewBox="0 0 40 40"
+                                        fill="none"
+                                >
+                                    <path
+                                            d="M28 12.6022L24.9946 28.2923C24.9946 28.2923 24.5741 29.3801 23.4189 28.8584L16.4846 23.3526L16.4524 23.3364C17.3891 22.4654 24.6524 15.7027 24.9698 15.3961C25.4613 14.9214 25.1562 14.6387 24.5856 14.9974L13.8568 22.053L9.71764 20.6108C9.71764 20.6108 9.06626 20.3708 9.00359 19.8491C8.9401 19.3265 9.73908 19.0439 9.73908 19.0439L26.6131 12.1889C26.6131 12.1889 28 11.5579 28 12.6022Z"
+                                            fill="#363435"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                    data-aos="zoom-in"
+                                    data-aos-delay="20"
+                                    href="{{ social.whatsup }}"
+                                    class="flex items-center justify-center text-2xl text-dark"
+                            >
+                                <i class="ri-whatsapp-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full h-full aspect-video md:aspect-square">
+                        <iframe class="w-full h-full"
+                                src="{{ contact.map }}"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-                <div class="w-full h-full aspect-video md:aspect-square">
-                    <iframe class="w-full h-full"
-                            src="{{ contact.map }}"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
     </main>
 
     <footer class="py-8 bg-light">

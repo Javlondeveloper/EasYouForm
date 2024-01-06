@@ -4,6 +4,40 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {#    google#}
+
+    <meta name="description" content="easYOUform Perfection in the details">
+    <meta name="keywords"
+          content="easYOUform, Perfection in the details, Textile, textiles, fabrics, clothing, designs, patterns, textile store">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+
+    {#    for social media#}
+
+    <meta property="og:title" content="Perfection in the details">
+    <meta property="og:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourwebsite.com/your-page-url">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+    {#    twitter cards#}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@easYOUform">
+    <meta name="twitter:title" content="easYOUform">
+    <meta name="twitter:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta name="twitter:image" content="https://easyouform.uz/static/project/image/logo.png">
+    {#    telegram#}
+
+    <meta property="og:title" content="Perfection in the details">
+    <meta property="og:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+
     <title>easYouform</title>
     <link rel="icon" type="image/x-icon" href="{% static 'project/image/eas_icon.png' %}">
     <link rel="stylesheet" href="{% static '/project/plugin/aos/aos.css' %}"/>
@@ -88,60 +122,61 @@
 
     <main class="min-h-screen">
         <section class="pt-32 pb-20 md:pb-[110px] md:pt-[200px] relative">
-        <div
-                class="container flex flex-col items-center space-y-[20px] md:space-y-[30px]"
-        >
-            <div class="text-center">
-                <h3
-                        data-aos="fade-right"
-                        class="mb-2 text-2xl font-normal lg:mb-4 md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
-                >
-                    {{ product_page.title }}
-                </h3>
-                <p
-                        data-aos="fade-right"
-                        data-aos-delay="100"
-                        class="text-sm font-light font-montserrat-alternates-light sm:text-base lg:text-lg font-montserrat"
-                >
-                    {{ product_page.text|striptags|safe }}
-                </p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]">
-                {% for category in categories %}
-                <a
-                        href="{% url 'products' category.slug %}"
-                        data-aos="zoom-in"
-                        data-aos-delay="10"
-                        class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                >
-                    <img
-                            src="{{ category.image.url }}"
-                            alt=""
-                            class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                    />
-                    <div
-                            class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+            <div
+                    class="container flex flex-col items-center space-y-[20px] md:space-y-[30px]"
+            >
+                <div class="text-center">
+                    <h3
+                            data-aos="fade-right"
+                            class="mb-2 text-2xl font-normal lg:mb-4 md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
                     >
-                        <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                            <h4
-                                    class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                        {{ product_page.title }}
+                    </h3>
+                    <p
+                            data-aos="fade-right"
+                            data-aos-delay="100"
+                            class="text-sm font-light font-montserrat-alternates-light sm:text-base lg:text-lg font-montserrat"
+                    >
+                        {{ product_page.text|striptags|safe }}
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]">
+                    {% for category in categories %}
+                        <a
+                                href="{% url 'products' category.slug %}"
+                                data-aos="zoom-in"
+                                data-aos-delay="10"
+                                class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
+                        >
+                            <img
+                                    src="{{ category.image.url }}"
+                                    alt=""
+                                    class="object-cover w-full h-full duration-500 group-hover:scale-125"
+                            />
+                            <div
+                                    class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
                             >
-                                {{ category.title }}
-                            </h4>
-                            <button
-                                    class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                            >
-                    <span class="text-xs font-normal md:text-sm font-montserrat">{% trans 'Подробнее' %}</span>
-                                <img src="{% static '/project/image/arrow-left.svg' %}" alt="" class="hidden h-5 md:block w-7"/>
-                            </button>
-                        </div>
-                    </div>
-                </a>
-                {% endfor %}
-            
+                                <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
+                                    <h4
+                                            class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                                    >
+                                        {{ category.title }}
+                                    </h4>
+                                    <button
+                                            class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
+                                    >
+                                        <span class="text-xs font-normal md:text-sm font-montserrat">{% trans 'Подробнее' %}</span>
+                                        <img src="{% static '/project/image/arrow-left.svg' %}" alt=""
+                                             class="hidden h-5 md:block w-7"/>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     </main>
 
     <footer class="py-8 bg-light">

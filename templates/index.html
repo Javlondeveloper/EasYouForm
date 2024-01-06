@@ -4,6 +4,39 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {#    google#}
+
+    <meta name="description" content="easYOUform Perfection in the details">
+    <meta name="keywords"
+          content="easYOUform, Perfection in the details, Textile, textiles, fabrics, clothing, designs, patterns, textile store">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+
+    {#    for social media#}
+
+    <meta property="og:title" content="Perfection in the details">
+    <meta property="og:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourwebsite.com/your-page-url">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+    {#    twitter cards#}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@easYOUform">
+    <meta name="twitter:title" content="easYOUform">
+    <meta name="twitter:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta name="twitter:image" content="https://easyouform.uz/static/project/image/logo.png">
+    {#    telegram#}
+
+    <meta property="og:title" content="Perfection in the details">
+    <meta property="og:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+
     <title>easYouform</title>
     <link rel="icon" type="image/x-icon" href="{% static 'project/image/eas_icon.png' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'project/image/eas_icon.png' %}">
@@ -91,218 +124,218 @@
     </nav>
     <main class="min-h-screen">
         <header class="relative w-full h-screen text-white">
-        <video
-                class="object-cover w-full h-full"
-                preload="auto"
-                autoplay
-                muted
-                playsinline
-        >
-            <source
-                    src="{{ index_banner.video.url }}"
-                    type="video/mp4"
-            />
-        </video>
-        <div class="absolute top-0 left-0 z-10 w-full h-screen">
-            <div
-                    class="container flex flex-col items-center justify-center h-full pb-[7%] gap-10 md:gap-0"
+            <video
+                    class="object-cover w-full h-full"
+                    preload="auto"
+                    autoplay
+                    muted
+                    playsinline
             >
-                <h2
-                        class="text-5xl font-normal text-center font-elmessiri sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
-                        data-aos="fade-up"
+                <source
+                        src="{{ index_banner.video.url }}"
+                        type="video/mp4"
+                />
+            </video>
+            <div class="absolute top-0 left-0 z-10 w-full h-screen">
+                <div
+                        class="container flex flex-col items-center justify-center h-full pb-[7%] gap-10 md:gap-0"
                 >
-                    {{ first_part_title }}
-                </h2>
-                <h3
-                        class="-mt-5 text-2xl font-normal sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-czizh"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                >
-                    {{ second_part_title }}
-                </h3>
-                <a
-                        href="{% url 'about' %}"
-                        class="flex flex-col items-center gap-3.5 absolute bottom-[10%] animate-bounce"
-                >
+                    <h2
+                            class="text-5xl font-normal text-center font-elmessiri sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                            data-aos="fade-up"
+                    >
+                        {{ first_part_title }}
+                    </h2>
+                    <h3
+                            class="-mt-5 text-2xl font-normal sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-czizh"
+                            data-aos="fade-up"
+                            data-aos-delay="100"
+                    >
+                        {{ second_part_title }}
+                    </h3>
+                    <a
+                            href="{% url 'about' %}"
+                            class="flex flex-col items-center gap-3.5 absolute bottom-[10%] animate-bounce"
+                    >
               <span
                       class="hidden text-sm font-normal font-montserrat md:text-xl md:block"
               >
                 {% trans 'Прокрутить' %}
               </span>
-                    <img src="{% static '/project/image/arrow-down.svg' %}" alt=""/>
-                </a>
+                        <img src="{% static '/project/image/arrow-down.svg' %}" alt=""/>
+                    </a>
+                </div>
             </div>
-        </div>
 
-    </header>
-    <section
-            id="mySlider"
-            class="splide md:py-14 sm:py-10 py-7"
-            aria-label="Splide Basic HTML Example"
-    >
-        <div class="splide__track">
-            <ul
-                    class="text-sm font-light splide__list font-montserrat text-dark sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl whitespace-nowrap">
-                {% for service in services %}
-                    <li class="flex items-center gap-10 splide__slide">
-                        <p>{{ service.name }}</p>
-                        <svg
-                                class="shrink-0 w-[37px] h-10"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="40"
-                                height="43"
-                                viewBox="0 0 40 43"
-                                fill="none"
+        </header>
+        <section
+                id="mySlider"
+                class="splide md:py-14 sm:py-10 py-7"
+                aria-label="Splide Basic HTML Example"
+        >
+            <div class="splide__track">
+                <ul
+                        class="text-sm font-light splide__list font-montserrat text-dark sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl whitespace-nowrap">
+                    {% for service in services %}
+                        <li class="flex items-center gap-10 splide__slide">
+                            <p>{{ service.name }}</p>
+                            <svg
+                                    class="shrink-0 w-[37px] h-10"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="40"
+                                    height="43"
+                                    viewBox="0 0 40 43"
+                                    fill="none"
+                            >
+                                <path
+                                        d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
+                                        stroke="#363435"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                            </svg>
+                        </li>
+                    {% endfor %}
+
+
+                </ul>
+            </div>
+        </section>
+        <section class="mb-10 md:mb-[50px]">
+            <div class="container">
+                <div
+                        class="grid md:grid-cols-2 xl:grid-cols-5 duration-500 gap-10 lg:gap-[70px]"
+                >
+                    <div class="xl:col-span-2 max-md:order-2">
+                        <div class="w-full h-[270px] md:h-[350px] xl:h-[450px] rounded-[60px] md:rounded-[120px]"
+                             data-aos="fade-right">
+                            <img src="{{ index_about.image.url }}" alt="about-us" class="object-fill w-full h-full"/>
+                        </div>
+                    </div>
+                    <div
+                            class="flex flex-col justify-center xl:col-span-3 max-md:order-1 max-md:items-center"
+                    >
+                        <h3
+                                class="pb-3 text-2xl font-normal md:text-3xl lg:text-4xl xl:text-5xl text-dark font-czizh max-md:text-center"
+                                data-aos="fade-left"
+                                data-aos-delay="40"
                         >
-                            <path
-                                    d="M20 37.625L16.8333 27.2333C16.6712 26.6937 16.3922 26.2031 16.0193 25.8019C15.6464 25.4007 15.1902 25.1004 14.6883 24.9257L5 21.5L14.6667 18.0958C15.1687 17.9215 15.6251 17.6216 15.9983 17.2207C16.3714 16.8199 16.6508 16.3295 16.8133 15.79L20 5.375L23.1667 15.7667C23.3288 16.3063 23.6078 16.7969 23.9807 17.1981C24.3536 17.5993 24.8098 17.8996 25.3117 18.0743L35 21.5L25.3333 24.9042C24.8313 25.0785 24.3749 25.3784 24.0017 25.7793C23.6286 26.1801 23.3492 26.6705 23.1867 27.21L20 37.625Z"
-                                    stroke="#363435"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                            />
-                        </svg>
-                    </li>
-                {% endfor %}
+                            {{ index_about.title }}
+                        </h3>
+                        <p
+                                class="text-base md:text-lg text-dark text-justify md:text-start font-montserrat font-light pb-[30px]"
+                                data-aos="fade-left"
+                                data-aos-delay="50"
+                        >
+                            {{ index_about.text|safe|striptags }}
+                        </p>
+                        <div data-aos="fade-left"
+                             data-aos-delay="60">
 
+                            <a href="{% url 'about' %}" class="btn-link">{% trans 'Подробнее' %}</a
+                            >
+                        </div>
 
-            </ul>
-        </div>
-    </section>
-    <section class="mb-10 md:mb-[50px]">
-        <div class="container">
-            <div
-                    class="grid md:grid-cols-2 xl:grid-cols-5 duration-500 gap-10 lg:gap-[70px]"
-            >
-                <div class="xl:col-span-2 max-md:order-2">
-                    <div class="w-full h-[270px] md:h-[350px] xl:h-[450px] rounded-[60px] md:rounded-[120px]"
-                         data-aos="fade-right">
-                        <img src="{{ index_about.image.url }}" alt="about-us" class="object-fill w-full h-full"/>
                     </div>
                 </div>
-                <div
-                        class="flex flex-col justify-center xl:col-span-3 max-md:order-1 max-md:items-center"
-                >
+            </div>
+        </section>
+        <section class="py-10 md:py-20 xl:pt-[50px] xl:pb-[100px]">
+            <div
+                    class="container flex flex-col items-center space-y-[20px] md:space-y-[30px]"
+            >
+                <div class="text-center">
                     <h3
-                            class="pb-3 text-2xl font-normal md:text-3xl lg:text-4xl xl:text-5xl text-dark font-czizh max-md:text-center"
-                            data-aos="fade-left"
-                            data-aos-delay="40"
+                            data-aos="fade-right"
+                            class="mb-2 text-2xl font-normal lg:mb-4 md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
                     >
-                        {{ index_about.title }}
+                        {{ index_category_text.title }}
                     </h3>
                     <p
-                            class="text-base md:text-lg text-dark text-justify md:text-start font-montserrat font-light pb-[30px]"
-                            data-aos="fade-left"
-                            data-aos-delay="50"
+                            data-aos="fade-right"
+                            data-aos-delay="100"
+                            class="text-sm font-light font-montserrat-alternates-light sm:text-base lg:text-lg font-montserrat"
                     >
-                        {{ index_about.text|safe|striptags }}
+                        {{ index_category_text.sub_title }}
                     </p>
-                    <div data-aos="fade-left"
-                       data-aos-delay="60">
-                        
-                    <a href="{% url 'about' %}" class="btn-link" >{% trans 'Подробнее' %}</a
-                    >
-                    </div>
-                        
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-10 md:py-20 xl:pt-[50px] xl:pb-[100px]">
-        <div
-                class="container flex flex-col items-center space-y-[20px] md:space-y-[30px]"
-        >
-            <div class="text-center">
-                <h3
-                        data-aos="fade-right"
-                        class="mb-2 text-2xl font-normal lg:mb-4 md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
-                >
-                    {{ index_category_text.title }}
-                </h3>
-                <p
-                        data-aos="fade-right"
-                        data-aos-delay="100"
-                        class="text-sm font-light font-montserrat-alternates-light sm:text-base lg:text-lg font-montserrat"
-                >
-                    {{ index_category_text.sub_title }}
-                </p>
-            </div>
-            <div
-                    class="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]">
-                {% for category in categories %}
-                    <a
-                            href="{% url 'products' category.slug %}"
-                            data-aos="zoom-in"
-                            data-aos-delay="10"
-                            class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
-                    >
-                        <img
-                                src="{{ category.image.url }}"
-                                alt=""
-                                class="object-cover w-full h-full duration-500 group-hover:scale-125"
-                        />
-                        <div
-                                class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-5 w-full mb-6 md:mb-10 xl:mb-[50px]">
+                    {% for category in categories %}
+                        <a
+                                href="{% url 'products' category.slug %}"
+                                data-aos="zoom-in"
+                                data-aos-delay="10"
+                                class="group block col-span-1 rounded-[20px] relative overflow-hidden text-light w-full h-[250px] md:h-[350px] lg:h-[380px]"
                         >
-                            <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
-                                <h4
-                                        class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
-                                >
-                                    {{ category.title }}
-                                </h4>
-                                <button
-                                        class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
-                                >
+                            <img
+                                    src="{{ category.image.url }}"
+                                    alt=""
+                                    class="object-cover w-full h-full duration-500 group-hover:scale-125"
+                            />
+                            <div
+                                    class="absolute top-0 left-0 flex flex-col justify-end w-full h-full p-2 duration-500 opacity-100 rounded-b-3xl lg:p-3"
+                            >
+                                <div class="p-2 overflow-hidden md:p-3 rounded-xl product-card">
+                                    <h4
+                                            class="font-montserrat font-medium mb-2.5 text-sm md:text-xl"
+                                    >
+                                        {{ category.title }}
+                                    </h4>
+                                    <button
+                                            class="absolute items-center gap-2 transition duration-500 opacity-0 -bottom-10 group-hover:flex group-hover:relative group-hover:opacity-100 group-hover:bottom-0"
+                                    >
                     <span class="text-xs font-normal md:text-sm font-montserrat"
                     >{% trans 'Подробнее' %}</span
                     >
-                                    <img
-                                            src="{% static '/project/image/arrow-left.svg' %}"
-                                            alt=""
-                                            class="hidden h-5 md:block w-7"
-                                    />
-                                </button>
+                                        <img
+                                                src="{% static '/project/image/arrow-left.svg' %}"
+                                                alt=""
+                                                class="hidden h-5 md:block w-7"
+                                        />
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                {% endfor %}
+                        </a>
+                    {% endfor %}
+
+                </div>
+                <div data-aos="fade-up" data-aos-delay="60">
+                    <a href="{% url 'category-product' %}" class="btn-link"
+                    >{% trans 'Посмотреть все' %}</a
+                    >
+                </div>
 
             </div>
-        <div data-aos="fade-up" data-aos-delay="60">
-            <a href="{% url 'category-product' %}" class="btn-link" 
-            >{% trans 'Посмотреть все' %}</a
-            >
-        </div>
-            
-        </div>
-    </section>
-    <section class="rewards py-[40px] md:py-[50px]">
-        <div class="container text-light">
-            <h3
-                    class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl pb-[50px] text-center font-czizh font-normal"
-                    data-aos="zoom-in"
-            >
-                {% trans 'Наши достижения говорят о нас' %}
-            </h3>
-            <div
-                    class="grid items-start justify-between grid-cols-2 font-medium md:items-center max-lg:gap-10 lg:flex font-montserrat"
-            >
-                <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <h4
-                            class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
-                    >
+        </section>
+        <section class="rewards py-[40px] md:py-[50px]">
+            <div class="container text-light">
+                <h3
+                        class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl pb-[50px] text-center font-czizh font-normal"
+                        data-aos="zoom-in"
+                >
+                    {% trans 'Наши достижения говорят о нас' %}
+                </h3>
+                <div
+                        class="grid items-start justify-between grid-cols-2 font-medium md:items-center max-lg:gap-10 lg:flex font-montserrat"
+                >
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <h4
+                                class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                        >
                 <span
                         data-purecounter-start="0"
                         data-purecounter-end="{{ about_us.experience }}"
                         data-purecounter-duration="1"
                         class="purecounter"
                 ></span>
-                    </h4>
-                    <p class="text-sm md:text-lg">{% trans 'лет на рынке' %}</p>
-                </div>
-                <div class="text-center" data-aos="zoom-in" data-aos-delay="150">
-                    <h4
-                            class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
-                    >
+                        </h4>
+                        <p class="text-sm md:text-lg">{% trans 'лет на рынке' %}</p>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="150">
+                        <h4
+                                class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                        >
                 <span
                         data-purecounter-start="0"
                         data-purecounter-end="{{ about_us.production_area }}"
@@ -310,67 +343,67 @@
                         class="purecounter"
                 ></span
                 >м<sup>2</sup>
-                    </h4>
-                    <p class="text-sm md:text-lg">{% trans 'Производственные площади' %}</p>
-                </div>
-                <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-                    <h4
-                            class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
-                    >
+                        </h4>
+                        <p class="text-sm md:text-lg">{% trans 'Производственные площади' %}</p>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                        <h4
+                                class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                        >
                 <span
                         data-purecounter-start="0"
                         data-purecounter-end="{{ about_us.work_place }}"
                         data-purecounter-duration="1"
                         class="purecounter"
                 ></span>
-                    </h4>
-                    <p class="text-sm md:text-lg">{% trans 'рабочих мест' %}</p>
-                </div>
-                <div class="text-center" data-aos="zoom-in" data-aos-delay="250">
-                    <h4
-                            class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
-                    >
+                        </h4>
+                        <p class="text-sm md:text-lg">{% trans 'рабочих мест' %}</p>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="250">
+                        <h4
+                                class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                        >
                 <span
                         data-purecounter-start="0"
                         data-purecounter-end="{{ about_us.monthly_production_output }}"
                         data-purecounter-duration="1"
                         class="purecounter"
                 ></span>
-                        к
-                    </h4>
-                    <p class="text-sm md:text-lg">{% trans 'Ежемесячный выпуск продукции' %}</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-10 md:py-20 xl:py-[70px]">
-        <div class="container flex flex-col items-center">
-            <h2
-                    class="mb-5 text-2xl font-normal text-center text-black md:text-3xl lg:text-4xl xl:text-5xl md:mb-8 font-czizh"
-                    data-aos="zoom-up"
-            >
-                {% trans 'Наши клиенты' %}
-            </h2>
-            <div class="w-full">
-                <div class="swiper aboutSwiper">
-                    <div
-                            class="swiper-wrapper"
-                            data-aos="zoom-in"
-                            data-aos-delay="100">
-                        {% for client in clients %}
-                            <a class="swiper-slide"
-                            ><img
-                                    src="{{ client.image.url }}"
-                                    alt=""
-                                    class="w-full h-[70px] object-contain"
-                            /></a>
-                        {% endfor %}
-
+                            к
+                        </h4>
+                        <p class="text-sm md:text-lg">{% trans 'Ежемесячный выпуск продукции' %}</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <section class="py-10 md:py-20 xl:py-[70px]">
+            <div class="container flex flex-col items-center">
+                <h2
+                        class="mb-5 text-2xl font-normal text-center text-black md:text-3xl lg:text-4xl xl:text-5xl md:mb-8 font-czizh"
+                        data-aos="zoom-up"
+                >
+                    {% trans 'Наши клиенты' %}
+                </h2>
+                <div class="w-full">
+                    <div class="swiper aboutSwiper">
+                        <div
+                                class="swiper-wrapper"
+                                data-aos="zoom-in"
+                                data-aos-delay="100">
+                            {% for client in clients %}
+                                <a class="swiper-slide"
+                                ><img
+                                        src="{{ client.image.url }}"
+                                        alt=""
+                                        class="w-full h-[70px] object-contain"
+                                /></a>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="py-8 bg-light">
         <div
