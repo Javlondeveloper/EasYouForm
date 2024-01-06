@@ -175,36 +175,26 @@
                     {{ contact.address }}
                 </p>
                 <div class="flex gap-6 w-fit max-xs:mx-auto">
-                    <a
-                            href="{{ social.instagram }}"
-                            class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
-                    >
-                        <i class="ri-instagram-line"></i>
+                    <a href="{{ social.instagram }}"
+                       class="flex items-center justify-center w-10 h-10 text-2xl text-dark" target="_blank">
+                        <i class="ri-instagram-line" style="color: #E1306C;"></i>
+                        <!-- Color code represents Instagram's color -->
                     </a>
-                    <a
-                            href="{{ social.telegram }}"
-                            class="flex items-center justify-center w-10 h-10 text-dark"
-                    >
-                        <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="40"
-                                height="40"
-                                viewBox="0 0 40 40"
-                                fill="none"
-                        >
-                            <path
-                                    d="M28 12.6022L24.9946 28.2923C24.9946 28.2923 24.5741 29.3801 23.4189 28.8584L16.4846 23.3526L16.4524 23.3364C17.3891 22.4654 24.6524 15.7027 24.9698 15.3961C25.4613 14.9214 25.1562 14.6387 24.5856 14.9974L13.8568 22.053L9.71764 20.6108C9.71764 20.6108 9.06626 20.3708 9.00359 19.8491C8.9401 19.3265 9.73908 19.0439 9.73908 19.0439L26.6131 12.1889C26.6131 12.1889 28 11.5579 28 12.6022Z"
-                                    fill="#363435"
-                            />
+                    <a href="{{ social.telegram }}" class="flex items-center justify-center w-10 h-10 text-dark"
+                       target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                             fill="#0088cc"> <!-- Color code represents Telegram's color -->
+                            <path d="M28 12.6022L24.9946 28.2923C24.9946 28.2923 24.5741 29.3801 23.4189 28.8584L16.4846 23.3526L16.4524 23.3364C17.3891 22.4654 24.6524 15.7027 24.9698 15.3961C25.4613 14.9214 25.1562 14.6387 24.5856 14.9974L13.8568 22.053L9.71764 20.6108C9.71764 20.6108 9.06626 20.3708 9.00359 19.8491C8.9401 19.3265 9.73908 19.0439 9.73908 19.0439L26.6131 12.1889C26.6131 12.1889 28 11.5579 28 12.6022Z"
+                                  fill="#0088cc"/>
                         </svg>
                     </a>
-                    <a
-                            href="{{ social.whatsup }}"
-                            class="flex items-center justify-center w-10 h-10 text-2xl text-dark"
-                    >
-                        <i class="ri-whatsapp-fill"></i>
+                    <a href="{{ social.whatsup }}"
+                       class="flex items-center justify-center w-10 h-10 text-2xl text-dark" target="_blank">
+                        <i class="ri-whatsapp-fill" style="color: #25D366;"></i>
+                        <!-- Color code represents WhatsApp's color -->
                     </a>
                 </div>
+
             </div>
             <div class="text-center">
                 <a
