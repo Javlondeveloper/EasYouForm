@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-28 09:30+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: templates/about2.html:38 templates/category-product.html:42
+#: templates/contact.html:43 templates/gallery.html:42 templates/index.html:46
+#: templates/product-inner2.html:73 templates/product.html:42
+msgid "Главная"
+msgstr "Главная"
+
+#: templates/about2.html:41 templates/category-product.html:45
+#: templates/contact.html:46 templates/gallery.html:45 templates/index.html:49
+#: templates/product-inner2.html:76 templates/product.html:45
+msgid "О нас"
+msgstr "О нас"
+
+#: templates/about2.html:44 templates/category-product.html:48
+#: templates/contact.html:49 templates/gallery.html:48 templates/index.html:52
+#: templates/product-inner2.html:79 templates/product.html:48
+msgid "Наша продукция"
+msgstr "Наша продукция"
+
+#: templates/about2.html:47 templates/category-product.html:51
+#: templates/contact.html:52 templates/gallery.html:51 templates/index.html:55
+#: templates/product-inner2.html:82 templates/product.html:51
+msgid "Галерея"
+msgstr "Галерея"
+
+#: templates/about2.html:50 templates/category-product.html:54
+#: templates/contact.html:55 templates/gallery.html:54 templates/index.html:58
+#: templates/product-inner2.html:85 templates/product.html:54
+msgid "Контакты"
+msgstr "Контакты"
+
+#: templates/about2.html:124
+msgid "Наши особенности:"
+msgstr "Наши особенности:"
+
+#: templates/about2.html:157 templates/index.html:270
+msgid "Наши достижения говорят о нас"
+msgstr "Наши достижения говорят о нас"
+
+#: templates/about2.html:173 templates/index.html:286
+msgid "лет на рынке"
+msgstr "лет на рынке"
+
+#: templates/about2.html:187 templates/index.html:300
+msgid "Производственные площади"
+msgstr "Производственные площади"
+
+#: templates/about2.html:200 templates/index.html:313
+msgid "рабочих мест"
+msgstr "рабочих мест"
+
+#: templates/about2.html:214 templates/index.html:327
+msgid "Ежемесячный выпуск продукции"
+msgstr "Ежемесячный выпуск продукции"
+
+#: templates/about2.html:226 templates/index.html:338
+msgid "Наши крупнейшие клиенты"
+msgstr "Наши крупнейшие клиенты"
+
+#: templates/about2.html:256 templates/category-product.html:152
+#: templates/contact.html:126 templates/contact.html:187
+#: templates/gallery.html:135 templates/index.html:369
+#: templates/product-inner2.html:301 templates/product.html:140
+msgid "Наш адрес:"
+msgstr "Наш адрес:"
+
+#: templates/about2.html:311 templates/category-product.html:207
+#: templates/contact.html:242 templates/gallery.html:190
+#: templates/index.html:424 templates/product-inner2.html:356
+#: templates/product.html:195
+msgid "Сайт создан"
+msgstr "Сайт создан"
+
+#: templates/about2.html:324 templates/category-product.html:220
+#: templates/contact.html:255 templates/gallery.html:203
+#: templates/index.html:437 templates/product-inner2.html:369
+#: templates/product.html:208
+msgid "©2023 easYOUform. All rights reserved."
+msgstr "©2023 easYOUform. All rights reserved."
+
+#: templates/category-product.html:131 templates/index.html:193
+#: templates/index.html:245 templates/product-inner2.html:259
+#: templates/product.html:119
+msgid "Подробнее"
+msgstr "Подробнее"
+
+#: templates/contact.html:96 templates/product-inner2.html:27
+msgid "Свяжитесь с нами!"
+msgstr "Свяжитесь с нами!"
+
+#: templates/contact.html:102
+msgid "Режим работы:"
+msgstr "Режим работы:"
+
+#: templates/contact.html:110
+msgid "Телефон:"
+msgstr "Телефон:"
+
+#: templates/contact.html:118
+msgid "Электронная почта:"
+msgstr "Электронная почта:"
+
+#: templates/index.html:127
+msgid "Прокрутить"
+msgstr "Прокрутить"
+
+#: templates/index.html:260
+msgid "Посмотреть все"
+msgstr "Посмотреть все"
+
+#: templates/product-inner2.html:42 templates/product-inner2.html:215
+msgid "Заказать"
+msgstr "Заказать"
+
+#: templates/product-inner2.html:47
+msgid "Назад"
+msgstr "Назад"
+
+#: templates/product-inner2.html:152
+msgid "Сум"
+msgstr "Сум"
+
+#: templates/product-inner2.html:157
+msgid "Доступные размеры"
+msgstr "Доступные размеры"
+
+#: templates/product-inner2.html:174
+msgid "Состав:"
+msgstr "Состав:"
+
+#: templates/product-inner2.html:182
+msgid "Размер товара на модели:"
+msgstr "Размер товара на модели:"
+
+#: templates/product-inner2.html:190
+msgid "Цвет:"
+msgstr "Цвет:"
+
+#: templates/product-inner2.html:198
+msgid "Рост модели на фото:"
+msgstr "Рост модели на фото:"
+
+#: templates/product-inner2.html:206
+msgid "Карманы:"
+msgstr "Карманы:"
+
+#: templates/product-inner2.html:217
+msgid "Вернуться в каталог"
+msgstr "Вернуться в каталог"
+
+#: templates/product-inner2.html:226
+msgid "С этим товаром также покупают"
+msgstr "С этим товаром также покупают"
+
+
