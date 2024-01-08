@@ -6,7 +6,7 @@ from django.utils.text import Truncator
 from modeltranslation.admin import TranslationAdmin
 
 from apps.models import *
-from apps.utils import ImagePreviewAdminWidget, VideoPreviewAdminWidget
+from apps.utils import ImagePreviewAdminWidget, VideoPreviewAdminWidget, FilePreviewAdminWidget
 
 
 @admin.register(IndexBanner)
@@ -81,19 +81,27 @@ class AboutUsAdmin(TranslationAdmin):
     inlines = (FeaturesInline,)
 
     formfield_overrides = {
-        ImageField: {"widget": ImagePreviewAdminWidget},
+        FileField: {"widget": FilePreviewAdminWidget},
     }
 
     def display_image(self, obj):
         if obj.image:
-            return format_html(
-                '<img src="{}" style="max-width:200px; max-height:200px;" />',
-                obj.image.url,
-            )
-        else:
-            return "No image available"
+            file_type = obj.image.name.split(".")[-1].lower()
+            if file_type in ["png", "jpg", "jpeg", "gif"]:
+                # Display an image tag if the file is an image
+                return format_html(
+                    '<img src="{}" style="max-width:200px; max-height:200px;" />',
+                    obj.image.url,
+                )
+            elif file_type in ["mp4", "avi", "mov", "wmv"]:
+                # Display a video tag if the file is a video
+                return format_html(
+                    '<video width="200" height="200" controls><source src="{}" type="video/mp4">'
+                    'Your browser does not support the video tag.</video>', obj.image.url
+                )
+        return "No image or video available"
 
-    display_image.short_description = "Image"
+    display_image.short_description = "Image/Video"
 
 
 @admin.register(Clients)
