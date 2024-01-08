@@ -122,7 +122,7 @@ class Service(Model):
 class AboutUs(ImageDeletionMixin, Model):
     title = CharField(max_length=255, null=True)
     text_up = RichTextField(null=True)
-    image = ImageField(max_length=255, upload_to=image_filename)
+    image = FileField(max_length=255, upload_to=image_filename)
     text_down = RichTextField(null=True)
     experience = IntegerField(null=True)
     production_area = IntegerField(null=True)

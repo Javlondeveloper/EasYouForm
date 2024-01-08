@@ -1,0 +1,369 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {#    google#}
+
+    <meta name="description" content="easYOUform Perfection in the details">
+    <meta name="keywords"
+          content="easYOUform, Perfection in the details, Textile, textiles, fabrics, clothing, designs, patterns, textile store">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+
+    {#    for social media#}
+
+    <meta property="og:title" content="Perfection in the details">
+    <meta property="og:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://easyouform.uz/">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+    {#    twitter cards#}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@easYOUform">
+    <meta name="twitter:title" content="easYOUform">
+    <meta name="twitter:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta name="twitter:image" content="https://easyouform.uz/static/project/image/logo.png">
+    {#    telegram#}
+
+    <meta property="og:title" content="Perfection in the details">
+    <meta property="og:description"
+          content="Our company was founded in 2008 in the city of Tashkent by several enthusiasts who love their work. At the beginning it was a small workshop for the production of knitted products, which grew into a large garment factory. Today, Construction Solutions LLC is an enterprise with its own production facilities and warehouses, occupying a total area of more than 2,500 square meters. The factory itself is located in the city of Nurafshan, the administrative center of the Tashkent region, 18 kilometers from the city of Tashkent. ​">
+    <meta property="og:image" content="https://easyouform.uz/static/project/image/logo.png">
+
+
+    <title>easYouform</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'project/image/eas_icon.png' %}">
+    <link rel="stylesheet" href="{% static '/project/plugin/aos/aos.css' %}"/>
+    <link rel="stylesheet" href="{% static '/project/css/main.css' %}"/>
+    <link
+            rel="stylesheet"
+            href="{% static '/project/plugin/swiper/swiper-bundle.min.css' %}"
+    />
+    <script src="{% static '/project/plugin/tailwind/tailwind.js' %}"></script>
+    <script src="{% static '/project/plugin/tailwind/tailwind.config.js' %}"></script>
+</head>
+<body>
+<div class="relative overflow-x-hidden bg-white wrapper">
+    <nav
+            id="navbar"
+            class=" fixed nav--bg--sidebar md:top-[10px] top-0 max-md:bg-light left-0 z-50 w-full mx-auto transition duration-700 "
+    >
+        <div
+                id="navbar-container"
+                class="transition duration-700  md:rounded-[60px] container nav--bg-sidebar duration-400 py-2.5 px-5 flex items-center justify-between"
+        >
+            <a href="{% url 'home' %}" class="h-[50px] w-[80px] lg:w-[100px] lg:h-[62px] block">
+                <img
+                        src="{% static '/project/image/logo.png' %}"
+                        alt="easYouform"
+                        class="object-contain w-full h-full"
+                />
+            </a>
+            <ul
+                    class="text-dark md:bg-transparent tracing-widest text-sm lg:text-lg z-50 flex flex-col items-center  w-full h-screen fixed  top-[70px] opacity-0 md:opacity-100 -right-[100%] duration-500 bg-light gap-3 lg:gap-x-8 xl:gap-x-14 pt-10 font-montserrat font-normal md:static md:w-auto md:h-auto md:flex-row md:pt-0 nav-content"
+            >
+                <li class="duration-500 hover:text-violet">
+                    <a href="{% url 'home' %}">{% trans 'Главная' %}</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="{% url 'about' %}">{% trans 'О нас' %}</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="{% url 'category-product' %}">{% trans 'Наша продукция' %}</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="{% url 'gallery' %}">{% trans 'Галерея' %}</a>
+                </li>
+                <li class="duration-500 hover:text-violet">
+                    <a href="{% url 'contact' %}">{% trans 'Контакты' %}</a>
+                </li>
+                <li class=" w-full  text-sm lg:text-lg text-grey md:hidden flex justify-center  gap-2 lg:gap-4 items-center">
+                    <a href="{% url 'set-language' 'ru' %}">Рус</a>
+                    <span class="text-red">|</span>
+                    <a href="{% url 'set-language' 'en' %}">Eng</a>
+                </li>
+            </ul>
+            <div class="flex gap-x-2">
+                <a
+                        href="tel:{{ contact.phone_1 }}"
+                        class="flex items-center text-sm gap-2.5 text-white bg-violet md:bg-transparent md:text-violet rounded-xl md:text-violet px-2 py-1.5 lg:text-lg"
+                >
+                    <i class="ri-phone-line text-xl mt-0.5 block md:hidden"></i>
+                    <span class="hidden font-normal md:block montserrat"
+                    >{{ contact.phone_1 }}</span
+                    >
+                </a>
+                <button
+                        class="px-2 py-1.5 text-lg text-white duration-500 bg-violet rounded-xl nav-btn md:hidden"
+                >
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+            <div class="font-montserrat  font-normal text-sm lg:text-lg text-grey hidden md:flex gap-2 lg:gap-4 items-center">
+                <a href="{% url 'set-language' 'ru' %}">Рус</a>
+                <span class="text-red">|</span>
+                <a href="{% url 'set-language' 'en' %}">Eng</a>
+            </div>
+        </div>
+
+    </nav>
+    <main class="min-h-screen">
+        <section class="pt-32 pb-10 md:pb-[50px] md:pt-[200px] about relative">
+            <div class="container relative z-4">
+                <div class="flex flex-col items-center gap-y-4">
+                    <h3
+                            class="text-2xl font-normal text-center md:text-3xl lg:text-4xl xl:text-5xl font-czizh"
+                            data-aos="fade-up"
+                    >
+                        {{ about.title }}
+                    </h3>
+                    <p
+                            class="w-full md:w-[70%] text-center text-base md:text-lg text-dark font-montserrat font-light pb-[30px]"
+                            data-aos="fade-up"
+                            data-aos-delay="50"
+                    >
+                        {{ about.text_up|safe|striptags }}
+                    </p>
+                </div>
+                <div
+                        data-aos="zoom-in"
+                        data-aos-delay="60"
+                        class="w-full aspect-square md:aspect-[16/6] rounded-xl md:rounded-[120px] overflow-hidden md:mt-[30px] mb-10 md:mb-[70px]"
+                >
+                    {% if about.image %}
+                        {% if about.image.name|lower|slice:'-4:' == '.mp4' %}
+                            <video class="object-cover w-full h-full" muted autoplay>
+                                <source src="{{ about.image.url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        {% else %}
+                            <img class="object-cover w-full h-full" src="{{ about.image.url }}" alt="">
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <p class="text-center px-[0] md:px-[10%] text-base md:text-lg text-dark font-montserrat font-light pb-[30px]"
+                        data-aos="fade-up">
+                    {{ about.text_down|safe|striptags }}
+                </p>
+            </div>
+        </section>
+        <section class="py-10 md:py-20 xl:py-[70px]">
+            <div class="container flex flex-col items-center">
+                <h2
+                        class="mb-5 text-2xl font-normal text-center text-black md:text-3xl lg:text-4xl xl:text-5xl md:mb-8 font-czizh"
+                        data-aos="fade-up"
+                >
+                    {% trans 'Наши особенности:' %}
+                </h2>
+                <div class="grid grid-cols-1 gap-3 md:gap-5 sm:grid-cols-2 md:grid-cols-4">
+                    {% for feature in about.features.all %}
+                        <div
+                                data-aos="zoom-in" data-aos-delay="50"
+                                class="relative px-6 pt-6 pb-4 my-4 transition-all bg-white border border-transparent shadow-lg cursor-pointer hover:shadow-xl rounded-3xl font-montserrat hover:border-violet duration-400 translate">
+                            <div class="absolute flex items-center px-5 py-4 text-white rounded-full shadow-xl bg-violet left-4 -top-6">
+                                <!-- svg  -->
+                                <i class="text-2xl {{ feature.icon }}"></i>
+
+                            </div>
+                            <div class="mt-8 space-y-2">
+                                <h4 class="text-lg md:text-xl text-violet">{{ feature.title }}:</h4>
+
+                                <p class="text-sm md:text-base">
+                                    {{ feature.text|safe|striptags }}
+                                </p>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+
+        <section class="rewards py-[40px] md:py-[50px]">
+            <div class="container text-light">
+                <h3
+                        class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl pb-[50px] text-center font-czizh font-normal"
+                        data-aos="zoom-in"
+                >
+                    {% trans 'Наши достижения говорят о нас' %}
+                </h3>
+                <div
+                        class="grid items-start justify-between grid-cols-2 font-medium md:items-center max-lg:gap-10 lg:flex font-montserrat"
+                >
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <h4
+                                class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                        >
+                <span
+                        data-purecounter-start="0"
+                        data-purecounter-end="{{ about.experience }}"
+                        data-purecounter-duration="1"
+                        class="purecounter"
+                ></span>
+                        </h4>
+                        <p class="text-sm md:text-lg">{% trans 'лет на рынке' %}</p>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="150">
+                        <h4
+                                class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                        >
+                <span
+                        data-purecounter-start="0"
+                        data-purecounter-end="{{ about.production_area }}"
+                        data-purecounter-duration="1"
+                        class="purecounter"
+                ></span
+                >м<sup>2</sup>
+                        </h4>
+                        <p class="text-sm md:text-lg">{% trans 'Производственные площади' %}</p>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                        <h4
+                                class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                        >
+                <span
+                        data-purecounter-start="0"
+                        data-purecounter-end="{{ about.work_place }}"
+                        data-purecounter-duration="1"
+                        class="purecounter"
+                ></span>
+                        </h4>
+                        <p class="text-sm md:text-lg">{% trans 'рабочих мест' %}</p>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in" data-aos-delay="250">
+                        <h4
+                                class="pb-3 text-3xl font-bold leading-normal md:text-3xl xl:text-5xl"
+                        >
+                <span
+                        data-purecounter-start="0"
+                        data-purecounter-end="{{ about.monthly_production_output }}"
+                        data-purecounter-duration="1"
+                        class="purecounter"
+                ></span>
+                            к
+                        </h4>
+                        <p class="text-sm md:text-lg">{% trans 'Ежемесячный выпуск продукции' %}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-10 md:py-20 xl:py-[70px]">
+            <div class="container flex flex-col items-center">
+                <h2
+                        class="mb-5 text-2xl font-normal text-center text-black md:text-3xl lg:text-4xl xl:text-5xl md:mb-8 font-czizh"
+                        data-aos="zoom-up"
+                >
+                    {% trans 'Наши крупнейшие клиенты' %}
+                </h2>
+                <div class="w-full">
+                    <div class="swiper aboutSwiper">
+                        <div class="swiper-wrapper"
+                             data-aos="zoom-in"
+                             data-aos-delay="100">
+                            {% for client in clients %}
+
+                                <a class="swiper-slide"
+                                ><img
+                                        src="{{ client.image.url }}"
+                                        alt=""
+                                        class="w-full h-[70px] object-contain"
+                                /></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="py-8 bg-light">
+        <div
+                class="container grid grid-cols-1 gap-5 xs:grid-cols-2 lg:grid-cols-3 text-dark font-montserrat-alternates xs:gap-10"
+        >
+            <div class="max-xs:text-center">
+                <p
+                        class="text-[13px] pb-[10px] font-montserrat font-medium"
+                        style="line-height: 24px !important"
+                >
+                    <span class="">{% trans 'Наш адрес:' %}</span>
+                    {{ contact.address }}
+                </p>
+                <div class="flex gap-6 w-fit max-xs:mx-auto">
+                    <a href="{{ social.instagram }}"
+                       class="flex items-center justify-center w-10 h-10 text-2xl text-dark" target="_blank">
+                        <i class="ri-instagram-line" style="color: #E1306C;"></i>
+                        <!-- Color code represents Instagram's color -->
+                    </a>
+                    <a href="{{ social.telegram }}" class="flex items-center justify-center w-10 h-10 text-dark"
+                       target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                             fill="#0088cc"> <!-- Color code represents Telegram's color -->
+                            <path d="M28 12.6022L24.9946 28.2923C24.9946 28.2923 24.5741 29.3801 23.4189 28.8584L16.4846 23.3526L16.4524 23.3364C17.3891 22.4654 24.6524 15.7027 24.9698 15.3961C25.4613 14.9214 25.1562 14.6387 24.5856 14.9974L13.8568 22.053L9.71764 20.6108C9.71764 20.6108 9.06626 20.3708 9.00359 19.8491C8.9401 19.3265 9.73908 19.0439 9.73908 19.0439L26.6131 12.1889C26.6131 12.1889 28 11.5579 28 12.6022Z"
+                                  fill="#0088cc"/>
+                        </svg>
+                    </a>
+                    <a href="{{ social.whatsup }}"
+                       class="flex items-center justify-center w-10 h-10 text-2xl text-dark" target="_blank">
+                        <i class="ri-whatsapp-fill" style="color: #25D366;"></i>
+                        <!-- Color code represents WhatsApp's color -->
+                    </a>
+                </div>
+
+            </div>
+            <div class="text-center">
+                <a
+                        href="tel:{{ contact.phone_2 }}"
+                        class="block text-sm lg:text-lg pb-[20px] font-montserrat font-medium"
+                        style="line-height: 34px !important"
+                >{{ contact.phone_2 }}</a
+                >
+                <a
+                        href="mailto:{{ contact.email }}"
+                        class="block font-normal font-montserrat"
+                        style="line-height: 24px !important"
+                >{{ contact.email }}</a
+                >
+            </div>
+            <div
+                    class="flex flex-col items-center justify-end md:items-end xs:max-lg:col-span-2"
+            >
+                <div
+                        class="flex items-center gap-[9px] pb-4 w-fit mx-auto md:mx-0 font-montserrat font-normal"
+                >
+                    <p class="text-dark opacity-70 text-[13px]">{% trans 'Сайт создан' %}</p>
+                    <a href="https://abduganiev.uz" target="_blank" class="w-10 h-10">
+                        <img
+                                class="object-contain w-full h-full"
+                                src="{% static '/project/image/abduganiev.png' %}"
+                                alt="abduganiev technology"
+                        />
+                    </a>
+                </div>
+                <p
+                        class="text-[#767676] text-[13px]"
+                        style="line-height: 24px !important"
+                >
+                    {% trans '©2023 easYOUform. All rights reserved.' %}
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="{% static '/project/plugin/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static '/project/plugin/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static '/project/js/script.js' %}"></script>
+<script src="{% static '/project/plugin/aos/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
